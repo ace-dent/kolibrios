@@ -33,7 +33,7 @@ Jens Granseuer <jensgr@gmx.net> Fixes to generate proper compiler flags
 Laxmi Harikumar <laxmi.harikumar@digital.com> Build fix
 J. Ali Harlow <ali@avrc.city.ac.uk> win32 backend updates
 Mathias Hasselmann <mathias.hasselmann@gmx.de> Significant reduction of calls to malloc
-Richard Henderson <rth@twiddle.net> "slim" macros for better shared libraries 
+Richard Henderson <rth@twiddle.net> "slim" macros for better shared libraries
 James Henstridge <james@daa.com.au> Build fixes related to freetype
 Graydon Hoare <graydon@redhat.com> Support for non-render X server, first real text support
 Thomas Hunger <info@teh-web.de> Initial version of cairo_in_stroke/fill
@@ -91,7 +91,7 @@ Bill Spitzak <spitzak@d2.com> Build fix to find Xrender.h without xrender.pc
 Zhe Su <james.su@gmail.com> Add support for fontconfig's embeddedbitmap option
 Owen Taylor <otaylor@redhat.com> Font rewrite, documentation, win32 backend
 Pierre Tardy <tardyp@gmail.com> EGL support and testing, OpenVG backend
-Karl Tomlinson <karlt+@karlt.net> Optimisation and obscure bug fixes (mozilla)
+Karl Tomlinson <karlt+@karlt.net> optimization and obscure bug fixes (mozilla)
 Alp Toker <alp@atoker.com> Fix several code/comment typos
 Malcolm Tredinnick <malcolm@commsecure.com.au> Documentation fixes
 David Turner <david@freetype.org> Optimize gradient calculations

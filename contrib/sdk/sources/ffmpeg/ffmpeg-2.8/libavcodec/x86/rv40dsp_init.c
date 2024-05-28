@@ -1,5 +1,5 @@
 /*
- * RV40 decoder motion compensation functions x86-optimised
+ * RV40 decoder motion compensation functions x86-optimized
  * Copyright (c) 2008 Konstantin Shishkov
  *
  * This file is part of FFmpeg.
@@ -21,7 +21,7 @@
 
 /**
  * @file
- * RV40 decoder motion compensation functions x86-optimised
+ * RV40 decoder motion compensation functions x86-optimized
  * 2,0 and 0,2 have h264 equivalents.
  * 3,3 is bugged in the rv40 format and maps to _xy2 version
  */

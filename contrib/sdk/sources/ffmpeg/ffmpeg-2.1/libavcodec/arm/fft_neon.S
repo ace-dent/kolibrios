@@ -1,5 +1,5 @@
 /*
- * ARM NEON optimised FFT
+ * ARM NEON optimized FFT
  *
  * Copyright (c) 2009 Mans Rullgard <mans@mansr.com>
  * Copyright (c) 2009 Naotoshi Nojiri

@@ -343,7 +343,7 @@
   new: archives : F4 on folder = extract, F4 on selected files\folders = extract, F4 on '..' = exract all (thx DRON)
   fix: now NDN can add files to .ZPAQ archive (Shift-F1) (thanks to WAJIM)
   fix: extract .HAP .CAB archive via Shift-F2 work again (thanks to WAJIM)
-  fix: archive setup dialog parametrs resized up to 99 char, some optimisation (thanks to WAJIM)
+  fix: archive setup dialog parametrs resized up to 99 char, some optimization (thanks to WAJIM)
   new: Highlite group list dialog update
 
 2019-12-22 (v3.00.0001)
@@ -606,10 +606,10 @@
   Description's in Network panel
   Use System and Hide file attributes in network's share
   Balloon in about window ;)
-  Show IP addres in panel instead of DateTime
+  Show IP address in panel instead of DateTime
   Quicksearch in network file panel use '\' like *
   Fix: Networks count in border
-  Show IP addres and HostName in infoPanel window (Ctrl-L)
+  Show IP address and HostName in infoPanel window (Ctrl-L)
   Support russian names in process path
   Now descriptions (ctrl-k) in Process panel - is FullPath to process
   Confirm before kill process

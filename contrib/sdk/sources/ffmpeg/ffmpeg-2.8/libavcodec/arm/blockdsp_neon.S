@@ -1,5 +1,5 @@
 /*
- * ARM NEON optimised block functions
+ * ARM NEON optimized block functions
  * Copyright (c) 2008 Mans Rullgard <mans@mansr.com>
  *
  * This file is part of FFmpeg.

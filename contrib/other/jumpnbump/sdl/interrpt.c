@@ -1,7 +1,7 @@
 /*
  * interrpt.c
  * Copyright (C) 1998 Brainchild Design - http://brainchilddesign.com/
- * 
+ *
  * Copyright (C) 2001 Chuck Mason <cemason@users.sourceforge.net>
  *
  * Copyright (C) 2002 Florian Schulze <crow@icculus.org>
@@ -65,7 +65,7 @@ static int player_keys[4][3] = {
 		KEY_PL1_LEFT,
 		KEY_PL1_RIGHT,
 		KEY_PL1_JUMP
-	},                        
+	},
 	{
 		KEY_PL2_LEFT,
 		KEY_PL2_RIGHT,
@@ -143,7 +143,7 @@ static void print_version()
 static int kaillera_thread(void *arg)
 {
 	kailleraInit();
-	
+
 	/* print_version(); */
 
 	kailleraSetInfos(&kaillera_data);
@@ -151,7 +151,7 @@ static int kaillera_thread(void *arg)
 	kailleraSelectServerDialog(0);
 	if (SDL_SemValue(game_start_sem) == 0) {
 		/* server dialog returned and game didnt start */
-		
+
 		/* release blocking thread */
 		my_player = -1;
 		SDL_SemPost(game_start_sem);
@@ -171,14 +171,14 @@ static int start_kaillera_thread(void)
 		printf("SDL_CreateThread failed\n");
 		return -1;
 	}
-	
+
 	return 0;
-}	
+}
 
 int addkey(unsigned int key)
 {
-	/* it doesnt matter if a player presses keys
-	 * that control other bunnies. whatever is sent 
+	/* it doesn't matter if a player presses keys
+	 * that control other bunnies. whatever is sent
 	 * is packed by pack_keys()
 	 */
 	if (!(key & 0x8000)) {

@@ -316,10 +316,10 @@ enum MGL_WIN_COLORS {
 	MGL_WIN_DARKMAGENTA		= 5,
 	MGL_WIN_DARKCYAN		= 6,
 	MGL_WIN_LIGHTGRAY		= 7,
-	MGL_WIN_TURQUOISE		= 8,		/* Reserved; dont count on this	*/
-	MGL_WIN_SKYBLUE			= 9,		/* Reserved; dont count on this	*/
-	MGL_WIN_CREAM			= 246,		/* Reserved; dont count on this	*/
-	MGL_WIN_MEDIUMGRAY		= 247,		/* Reserved; dont count on this	*/
+	MGL_WIN_TURQUOISE		= 8,		/* Reserved; don't count on this	*/
+	MGL_WIN_SKYBLUE			= 9,		/* Reserved; don't count on this	*/
+	MGL_WIN_CREAM			= 246,		/* Reserved; don't count on this	*/
+	MGL_WIN_MEDIUMGRAY		= 247,		/* Reserved; don't count on this	*/
 	MGL_WIN_DARKGRAY		= 248,
 	MGL_WIN_LIGHTRED		= 249,
 	MGL_WIN_LIGHTGREEN		= 250,
@@ -508,7 +508,7 @@ typedef enum {
  *
  * NOTE: When your callback is called with the MGL_DEACTIVATE flag, you
  *		 cannot assume that you have access to the display memory surfaces
- *		 as they may have been lost by the time your callback has been called. 
+ *		 as they may have been lost by the time your callback has been called.
  */
 
 #define	MGL_DEACTIVATE	0x0001	/* Application losing active focus		*/
@@ -532,9 +532,9 @@ typedef enum {
  * connectivity while the user has temporarily switched back to GDI mode.
  */
 
-#define	MGL_NO_DEACTIVATE	0	/* Dont allow app to be deactivated 	*/
+#define	MGL_NO_DEACTIVATE	0	/* Don't allow app to be deactivated 	*/
 #define	MGL_SUSPEND_APP		1	/* Suspend application until restored	*/
-#define	MGL_NO_SUSPEND_APP	2	/* Dont suspend, but allow switch		*/
+#define	MGL_NO_SUSPEND_APP	2	/* Don't suspend, but allow switch		*/
 
 /* Here we define the structures used to represent points and rectangles */
 
@@ -832,7 +832,7 @@ typedef struct {
 /* Public Device Context Structure. The 'surface' member along with the
  * gmode_t information block, provides direct access to the active
  * display surface for user applications. The MGL virtualises the surface
- * in SuperVGA modes that dont have a real linear framebuffer.
+ * in SuperVGA modes that don't have a real linear framebuffer.
  */
 
 typedef struct {
@@ -911,7 +911,7 @@ typedef struct {
  *		 rendering!!
  *
  *		 This is not necessary for non-accelerated device context, so you
- *		 might want to optimise these calls out if there is no hardware
+ *		 might want to optimize these calls out if there is no hardware
  *		 acceleration support.
  */
 
@@ -937,7 +937,7 @@ extern "C" {			/* Use "C" linkage when in C++ mode	*/
 
 /*---------------------------------------------------------------------------
  * Routines bound to a specific device context. These routines all take
- * an MGLDC as a parmeter for the context to work with and hence dont work
+ * an MGLDC as a parmeter for the context to work with and hence don't work
  * with the current context. If however the context passed is the currently
  * active context, all changes to that context are reflected in the
  * currently active context as well.
@@ -1617,10 +1617,10 @@ void	MGLAPI MGL_setFileIO(fileio_t *fio);
 
 /* The following dummy symbols are used to link in driver files to be used. A
  * driver is not active until it is linked in with the MGL_registerDriver
- * call. Because we dont export globals in DLLs, we provide functions to
+ * call. Because we don't export globals in DLLs, we provide functions to
  * get the address of the drivers. However for a static link library we
  * need to use globals so that if the driver data is unreferenced, it will
- * not be linked in with the code. 
+ * not be linked in with the code.
  */
 
 #ifndef	BUILD_MGL

@@ -97,7 +97,7 @@ struct mpg123_handle_struct
 	int new_format;
 	real hybrid_block[2][2][SBLIMIT*SSLIMIT];
 	int hybrid_blc[2];
-	/* the scratch vars for the decoders, sometimes real, sometimes short... sometimes int/long */ 
+	/* the scratch vars for the decoders, sometimes real, sometimes short... sometimes int/long */
 	short *short_buffs[2][2];
 	real *real_buffs[2][2];
 	unsigned char *rawbuffs;
@@ -284,7 +284,7 @@ struct mpg123_handle_struct
 	int decoder_change;
 	int delayed_change;
 	long clip;
-	/* the meta crap */
+	/* the meta 'stuff' */
 	int metaflags;
 	unsigned char id3buf[128];
 #ifndef NO_ID3V2

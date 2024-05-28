@@ -251,7 +251,7 @@ int filelength(int handle)
 #endif
 
 
-/* networking shite. */
+/* networking stuff!!... */
 
 int client_player_num = -1;
 int is_server = 1;

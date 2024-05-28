@@ -52,11 +52,11 @@ include struct.inc
         push    EBP             ; save BP
         test    EDX,07ff00000h  ; check for zero
         _if     e               ; if it is then
-          sub   EDX,EDX         ; - make whole damn thing a zero
+          sub   EDX,EDX         ; - make whole thing a zero
         _endif                  ; endif
         test    ECX,07ff00000h  ; check op2 for zero
         _if     e               ; if it is then
-          sub   ECX,ECX         ; - make whole damn thing a zero
+          sub   ECX,ECX         ; - make whole thing a zero
         _endif                  ; endif
         mov     EBP,ECX         ; save op2 exponent
         xor     EBP,EDX         ; see about signs of the operands

@@ -1656,7 +1656,7 @@ coff_bad_format_hook (bfd * abfd ATTRIBUTE_UNUSED, void * filehdr)
      and Intel 960 readwrite headers (I960WRMAGIC) is that the
      optional header is of a different size.
 
-     But the mips keeps extra stuff in it's opthdr, so dont check
+     But the mips keeps extra stuff in it's opthdr, so don't check
      when doing that.  */
 
 #if defined(M88) || defined(I960)
@@ -4011,7 +4011,7 @@ coff_write_object_contents (bfd * abfd)
 
   /* Don't include the internal abs section in the section count */
 
-  /* We will NOT put a fucking timestamp in the header here. Every time you
+  /* We will NOT put a timestamp in the header here. Every time you
      put it back, I will come in and take it out again.  I'm sorry.  This
      field does not belong here.  We fill it with a 0 so it compares the
      same but is not a reasonable time. -- gnu@cygnus.com  */

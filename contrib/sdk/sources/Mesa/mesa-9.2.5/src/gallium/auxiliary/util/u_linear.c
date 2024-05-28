@@ -1,8 +1,8 @@
 /**************************************************************************
- * 
+ *
  * Copyright 2009 VMware, Inc.
  * All Rights Reserved.
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a
  * copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
@@ -10,11 +10,11 @@
  * distribute, sub license, and/or sell copies of the Software, and to
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice (including the
  * next paragraph) shall be included in all copies or substantial portions
  * of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
  * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.
@@ -22,7 +22,7 @@
  * ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
  * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- * 
+ *
  **************************************************************************/
 
 /**
@@ -44,7 +44,7 @@ pipe_linear_to_tile(size_t src_stride, const void *src_ptr,
 
    assert(pipe_linear_check_tile(t));
 
-   /* lets write lineary to the tiled buffer */
+   /* let's write lineary to the tiled buffer */
    for (y = 0; y < t->tiles_y; y++) {
       for (x = 0; x < t->tiles_x; x++) {
 	 /* this inner loop could be replace with SSE magic */
@@ -66,7 +66,7 @@ void pipe_linear_from_tile(struct pipe_tile_info *t, const void *src_ptr,
    size_t bytes = t->cols * t->block.size;
    const char *src_ptr2 = (const char *) src_ptr;
 
-   /* lets read lineary from the tiled buffer */
+   /* let's read lineary from the tiled buffer */
    for (y = 0; y < t->tiles_y; y++) {
       for (x = 0; x < t->tiles_x; x++) {
 	 /* this inner loop could be replace with SSE magic */

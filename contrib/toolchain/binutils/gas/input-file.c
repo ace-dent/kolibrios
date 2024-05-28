@@ -233,10 +233,10 @@ input_file_give_next_buffer (char *where /* Where to place 1st character of new 
 
   if (f_in == (FILE *) 0)
     return 0;
-  /* fflush (stdin); could be done here if you want to synchronise
+  /* fflush (stdin); could be done here if you want to synchronize
      stdin and stdout, for the case where our input file is stdin.
      Since the assembler shouldn't do any output to stdout, we
-     don't bother to synch output and input.  */
+     don't bother to sync output and input.  */
   if (preprocess)
     size = do_scrub_chars (input_file_get, where, BUFFER_SIZE);
   else

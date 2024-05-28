@@ -287,8 +287,8 @@ dirname_res_icons    db '/tmp0/1/res/icons', 0
 
 url              db 'www.kolibri-n.org/files/netsurf/',0
 
-; I don't know why NOTIFY_CHANGE doesn't work for the first file 
-; so I use this small shit to fix it at NOTIFY_RUN phase
+; I don't know why NOTIFY_CHANGE doesn't work for the first file
+; so I use this small hack to fix it at NOTIFY_RUN phase
 filelist_first db '/tmp0/1/netsurf', 0
 
 MAX_FILES = 6
@@ -398,14 +398,14 @@ rb 2048
     db "'", 0
  sz_flags:
     db "Ddcpt", 0
-	
+
  sz_final_text:
     db "Netsurf download complete.",10,"Enjoy!",0
 
  fi_launch:
     dd	    7, 0, params, 0, 0
     db	    "/sys/@notify", 0
-	
+
 fileopen    dd 7
             dd 0,0,0,0
             db 0

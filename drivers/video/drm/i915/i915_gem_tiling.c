@@ -76,7 +76,7 @@ i915_tiling_ok(struct drm_device *dev, int stride, int size, int tiling_mode)
 
 	/* check maximum stride & object size */
 	/* i965+ stores the end address of the gtt mapping in the fence
-	 * reg, so dont bother to check the size */
+	 * reg, so don't bother to check the size */
 	if (INTEL_INFO(dev)->gen >= 7) {
 		if (stride / 128 > GEN7_FENCE_MAX_PITCH_VAL)
 			return false;

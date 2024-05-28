@@ -1,5 +1,5 @@
 /*
- * ARM NEON optimised DSP functions
+ * ARM NEON optimized DSP functions
  * Copyright (c) 2008 Mans Rullgard <mans@mansr.com>
  * Copyright (c) 2013 Janne Grunau <janne-libav@jannau.net>
  *

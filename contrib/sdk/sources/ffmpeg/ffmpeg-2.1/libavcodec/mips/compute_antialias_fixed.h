@@ -28,7 +28,7 @@
  *
  * Author:  Bojan Zivkovic (bojan@mips.com)
  *
- * Compute antialias function optimised for MIPS fixed-point architecture
+ * Compute antialias function optimized for MIPS fixed-point architecture
  *
  * This file is part of FFmpeg.
  *

@@ -22,7 +22,7 @@
 #include "libavutil/arm/asm.S"
 
 /**
- * ARM VFP optimised int32 to float conversion.
+ * ARM VFP optimized int32 to float conversion.
  * Assume len is a multiple of 8, destination buffer is at least 4 bytes aligned
  * (16 bytes alignment is best for BCM2835), little-endian.
  */
@@ -183,10 +183,10 @@ function ff_int32_to_float_fmul_array8_vfp, export=1
 endfunc
 
 /**
- * ARM VFP optimised int32 to float conversion.
+ * ARM VFP optimized int32 to float conversion.
  * Assume len is a multiple of 8, destination buffer is at least 4 bytes aligned
  * (16 bytes alignment is best for BCM2835), little-endian.
- * TODO: could be further optimised by unrolling and interleaving, as above
+ * TODO: could be further optimized by unrolling and interleaving, as above
  */
 @ void ff_int32_to_float_fmul_scalar_vfp(float *dst, const int32_t *src, float mul, int len)
 function ff_int32_to_float_fmul_scalar_vfp, export=1

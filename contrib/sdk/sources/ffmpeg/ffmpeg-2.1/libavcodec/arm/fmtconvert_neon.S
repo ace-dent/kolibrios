@@ -1,5 +1,5 @@
 /*
- * ARM NEON optimised Format Conversion Utils
+ * ARM NEON optimized Format Conversion Utils
  * Copyright (c) 2008 Mans Rullgard <mans@mansr.com>
  *
  * This file is part of FFmpeg.

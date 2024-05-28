@@ -828,10 +828,10 @@ static void error1(TCCState *s1, int is_warning, const char *fmt, va_list ap)
         /* default case: stderr */
         if (s1->ppfp) /* print a newline during tcc -E */
             fprintf(s1->ppfp, "\n"), fflush(s1->ppfp);
-#ifndef TCC_TARGET_MEOS 
+#ifndef TCC_TARGET_MEOS
         fprintf(stderr, "%s\n", buf);
         fflush(stderr); /* print error/warning now (win32) */
-#else 
+#else
         fprintf(stdout, "%s\n", buf);
         fflush(stdout); /* print error/warning now (win32) */
 #endif
@@ -1134,7 +1134,7 @@ LIBTCCAPI TCCState *tcc_new(void)
 #if defined TCC_TARGET_MEOS && ! TCC_TARGET_MEOS_LINUX
     tcc_set_lib_path_kos(s);
 #else
-    
+
 #ifdef TCC_TARGET_MEOS_LINUX
     tcc_set_lib_path_linux(s);
 #else
@@ -1227,7 +1227,7 @@ LIBTCCAPI TCCState *tcc_new(void)
     tcc_define_symbol(s, "__NetBSD__", str( __NetBSD__));
 #  undef str
 # endif
-    
+
     /* TinyCC & gcc defines */
 #if defined TCC_TARGET_PE && defined TCC_TARGET_X86_64
     tcc_define_symbol(s, "__SIZE_TYPE__", "unsigned long long");
@@ -1753,7 +1753,7 @@ LIBTCCAPI int tcc_set_output_type(TCCState *s, int output_type)
     if (s->output_type != TCC_OUTPUT_OBJ && !s->nostdlib)
     {
         tcc_add_crt(s,"crt0.o");
-        //tcc_add_library(s,"lc.obj"); // adding libck.a dont work, because need to be added last
+        //tcc_add_library(s,"lc.obj"); // adding libck.a don't work, because need to be added last
     }
 #else
     /* add libc crt1/crti objects */
@@ -2286,7 +2286,7 @@ ST_FUNC int tcc_parse_args1(TCCState *s, int argc, char **argv)
         case TCC_OPTION_B:
             /* set tcc utilities path (mainly for tcc development) */
             tcc_set_lib_path(s, optarg);
-#ifdef TCC_TARGET_MEOS 
+#ifdef TCC_TARGET_MEOS
             tcc_split_path(s, (void ***)&s->crt_paths, &s->nb_crt_paths, CONFIG_TCC_CRTPREFIX);
 #endif
             break;

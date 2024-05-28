@@ -1413,7 +1413,7 @@ proc ahci_find_cmdslot stdcall, pdata: dword
 endp
 
 
-proc _memset stdcall, dest:dword, val:byte, cnt:dword ; doesnt clobber any registers
+proc _memset stdcall, dest:dword, val:byte, cnt:dword ; doesn't clobber any registers
         ;DEBUGF  DBG_INFO, "memset(%x, %u, %u)\n", [dest], [val], [cnt]
         push    eax ecx edi
         mov     edi, dword [dest]
@@ -1427,7 +1427,7 @@ endp
 ; Swaps byte order in words
 ; base - address of first word
 ; len - how many words to swap bytes in
-; doesnt clobber any registers
+; doesn't clobber any registers
 proc swap_bytes_in_words stdcall, base: dword, len: dword
         push    eax ebx ecx
         xor     ecx, ecx

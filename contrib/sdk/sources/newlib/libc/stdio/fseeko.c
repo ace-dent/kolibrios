@@ -209,7 +209,7 @@ _DEFUN(_fseeko_r, (ptr, fp, offset, whence),
     }
 
   /*
-   * Can only optimise if:
+   * Can only optimize if:
    *	reading (and not reading-and-writing);
    *	not unbuffered; and
    *	this is a `regular' Unix file (and hence seekfn==__sseek).
@@ -246,7 +246,7 @@ _DEFUN(_fseeko_r, (ptr, fp, offset, whence),
     }
 
   /*
-   * We are reading; we can try to optimise.
+   * We are reading; we can try to optimize.
    * Figure out where we are going and where we are now.
    */
 
@@ -349,7 +349,7 @@ _DEFUN(_fseeko_r, (ptr, fp, offset, whence),
   return 0;
 
   /*
-   * We get here if we cannot optimise the seek ... just
+   * We get here if we cannot optimize the seek ... just
    * do it.  Allow the seek function to change fp->_bf._base.
    */
 #endif

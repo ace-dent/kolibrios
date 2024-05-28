@@ -385,7 +385,7 @@ static void busy_msleep( unsigned long msec )
 {
     struct mbedtls_timing_hr_time hires;
     unsigned long i = 0; /* for busy-waiting */
-    volatile unsigned long j; /* to prevent optimisation */
+    volatile unsigned long j; /* to prevent optimization */
 
     (void) mbedtls_timing_get_timer( &hires, 1 );
 

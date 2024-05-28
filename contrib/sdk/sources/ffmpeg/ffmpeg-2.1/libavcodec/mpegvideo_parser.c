@@ -46,7 +46,7 @@ static void mpegvideo_extract_headers(AVCodecParserContext *s,
     int did_set_size=0;
     int bit_rate = 0;
     int vbv_delay = 0;
-//FIXME replace the crap with get_bits()
+//FIXME replace the junk with get_bits()
     s->repeat_pict = 0;
 
     while (buf < buf_end) {

@@ -64,7 +64,7 @@ typedef struct WaveFMT {
 	Uint32	FMTchunk;
 	Uint32	fmtlen;
 */
-	Uint16	encoding;	
+	Uint16	encoding;
 	Uint16	channels;		/* 1 = mono, 2 = stereo */
 	Uint32	frequency;		/* One of 11025, 22050, or 44100 Hz */
 	Uint32	byterate;		/* Average bytes per second */
@@ -201,7 +201,7 @@ int WAVStream_PlaySome(Uint8 *stream, int len)
 			/* At least at the time of writing, SDL_ConvertAudio()
 			   does byte-order swapping starting at the end of the
 			   buffer. Thus, if we are reading 16-bit samples, we
-			   had better make damn sure that we get an even
+			   had better make sure that we get an even
 			   number of bytes, or we'll get garbage.
 			 */
 			if ( (music->cvt.src_format & 0x0010) && (original_len & 1) ) {
@@ -218,11 +218,11 @@ int WAVStream_PlaySome(Uint8 *stream, int len)
 			}
 			data = SDL_stack_alloc(Uint8, len);
 			if (data)
-			{		
+			{
 				SDL_RWread(music->rw, data, len, 1);
 				SDL_MixAudio(stream, data, len, wavestream_volume);
 				SDL_stack_free(data);
-			}	
+			}
 		}
 	}
 	return left;
@@ -490,7 +490,7 @@ static SDL_RWops *LoadAIFFStream (SDL_RWops *src, SDL_AudioSpec *spec,
 	    was_error = 1;
 	    goto done;
 	}
-		    
+
 	if (!found_COMM) {
 	    Mix_SetError("Bad AIFF file (no COMM chunk)");
 	    was_error = 1;

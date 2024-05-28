@@ -293,7 +293,7 @@ static int set_compensation(ResampleContext *c, int sample_delta, int compensati
 #include "resample_template.c"
 #undef TEMPLATE_RESAMPLE_DBL
 
-// XXX FIXME the whole C loop should be written in asm so this x86 specific code here isnt needed
+// XXX FIXME the whole C loop should be written in asm so this x86 specific code here is not needed
 #if HAVE_MMXEXT_INLINE
 
 #include "x86/resample_mmx.h"

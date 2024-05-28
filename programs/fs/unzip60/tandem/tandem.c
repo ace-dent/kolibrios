@@ -590,7 +590,7 @@ int stat(n, s)
   if (err != 0) return -1;
 
   if (kind == 1 || (kind == 0 && level < 2)) {
-    /* Pattern, Subvol Name or One part Filename - lets see if it exists */
+    /* Pattern, Subvol Name or One part Filename - let's see if it exists */
     err = FILENAME_FINDSTART_ ( &searchid,
                                 fname,
                                 fnamelen,

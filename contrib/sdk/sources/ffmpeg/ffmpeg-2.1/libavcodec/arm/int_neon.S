@@ -1,5 +1,5 @@
 /*
- * ARM NEON optimised integer operations
+ * ARM NEON optimized integer operations
  * Copyright (c) 2009 Konstantin Shishkov
  *
  * This file is part of FFmpeg.

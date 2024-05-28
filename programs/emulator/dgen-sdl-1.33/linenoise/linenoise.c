@@ -563,7 +563,7 @@ static int outputChars(struct current *current, const char *buf, int len)
 {
     COORD pos = { current->x, current->y };
     DWORD n;
-	
+
     WriteConsoleOutputCharacter(current->outh, buf, len, pos, &n);
     current->x += len;
     return 0;
@@ -806,7 +806,7 @@ static int remove_char(struct current *current, int pos)
         p2 = p1 + utf8_index(current->buf + p1, 1);
 
 #ifdef USE_TERMIOS
-        /* optimise remove char in the case of removing the last char */
+        /* optimize remove char in the case of removing the last char */
         if (current->pos == pos + 1 && current->pos == current->chars) {
             if (current->buf[pos] >= ' ' && utf8_strlen(current->prompt, -1) + utf8_strlen(current->buf, current->len) < current->cols - 1) {
                 ret = 2;
@@ -846,7 +846,7 @@ static int insert_char(struct current *current, int pos, int ch)
         p2 = p1 + n;
 
 #ifdef USE_TERMIOS
-        /* optimise the case where adding a single char to the end and no scrolling is needed */
+        /* optimize the case where adding a single char to the end and no scrolling is needed */
         if (current->pos == pos && current->chars == pos) {
             if (ch >= ' ' && utf8_strlen(current->prompt, -1) + utf8_strlen(current->buf, current->len) < current->cols - 1) {
                 IGNORE_RC(write(current->fd, buf, n));

@@ -27,7 +27,7 @@ flag      - flags (byte)
                                           can't handle it properly
 data      - compressed or uncompressed file attribute data
 
-If flag & EB_BE_FL_UNCMPR, the data is not compressed; this optimisation is
+If flag & EB_BE_FL_UNCMPR, the data is not compressed; this optimization is
 necessary to prevent wasted space for files with small attributes (which
 appears to be quite common on the Advanced Access DR9 release).  In this
 case, there should be ( ef_size - EB_BEOS_HLEN ) bytes of data, and full_size

@@ -1095,7 +1095,7 @@ pattern_is_supported (cairo_xlib_display_t *display,
     }
 
     if (! CAIRO_RENDER_HAS_FILTERS (display)) {
-	    /* No filters implies no transforms, so we optimise away BILINEAR */
+	    /* No filters implies no transforms, so we optimize away BILINEAR */
     }
 
     return TRUE;

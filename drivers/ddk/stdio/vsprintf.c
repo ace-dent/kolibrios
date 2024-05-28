@@ -6,7 +6,7 @@
 
 /* vsprintf.c -- Lars Wirzenius & Linus Torvalds. */
 /*
- * Wirzenius wrote this portably, Torvalds fucked it up :-)
+ * Wirzenius wrote this portably, Torvalds messed it up :-)
  */
 
 /*

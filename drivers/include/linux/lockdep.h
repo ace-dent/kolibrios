@@ -459,7 +459,7 @@ do {								\
 #ifdef CONFIG_LOCKDEP
 
 /*
- * On lockdep we dont want the hand-coded irq-enable of
+ * On lockdep we don't want the hand-coded irq-enable of
  * _raw_*_lock_flags() code, because lockdep assumes
  * that interrupts are not re-enabled during lock-acquire:
  */

@@ -340,7 +340,7 @@ struct instruction instruction_list[] = {
  * If so, it may be a macro.
 */
 
-int parse_mnemonic(struct prog_info *pi) 
+int parse_mnemonic(struct prog_info *pi)
 {
   int mnemonic;
   int i;
@@ -358,7 +358,7 @@ int parse_mnemonic(struct prog_info *pi)
 	macro = get_macro(pi, pi->fi->scratch); // and so, we try to get the corresponding macro struct.
 	if(macro) {
 		return(expand_macro(pi, macro, operand1)); // we expand the macro
-	} else { 				// if we cant find a name, this is a unknown word.
+	} else { 				// if we can't find a name, this is a unknown word.
 		print_msg(pi, MSGTYPE_ERROR, "Unknown mnemonic/macro: %s", pi->fi->scratch);
 		return(True);
 	}
@@ -366,14 +366,16 @@ int parse_mnemonic(struct prog_info *pi)
   if(pi->pass == PASS_2) {
 	if(mnemonic <= MNEMONIC_BREAK) {
 		if(operand1) {
-			print_msg(pi, MSGTYPE_WARNING, "Garbage after instruction %s: %s", instruction_list[mnemonic].mnemonic, operand1);		}
+			print_msg(pi, MSGTYPE_WARNING, "Garbage after instruction %s: %s", instruction_list[mnemonic].mnemonic, operand1);
+		}
 		opcode = 0;			// No operand
 	} else if(mnemonic <= MNEMONIC_ELPM) {
 		if(operand1) {
 			operand2 = get_next_token(operand1, TERM_COMMA);
 			if(!operand2) {
 				print_msg(pi, MSGTYPE_ERROR, "%s needs a second operand", instruction_list[mnemonic].mnemonic);
-				return(True);			}
+				return(True);
+			}
 			get_next_token(operand2, TERM_END);
 			i = get_register(pi, operand1);
 			opcode = i << 4;
@@ -603,7 +605,7 @@ int parse_mnemonic(struct prog_info *pi)
 			i = get_register(pi, operand2);
 			opcode |= i << 4;
 		} else
-			print_msg(pi, MSGTYPE_ERROR, "Shit! Missing opcode check [%d]...", mnemonic);
+			print_msg(pi, MSGTYPE_ERROR, "Error! Missing opcode check [%d]...", mnemonic);
 	}
 	if (pi->device->flag & instruction_list[mnemonic].flag)	{
 		strncpy(temp, instruction_list[mnemonic].mnemonic, MAX_MNEMONIC_LEN);
@@ -628,7 +630,7 @@ int parse_mnemonic(struct prog_info *pi)
 	else
 		pi->cseg_addr++;
   } else { // Pass 1
-	if((mnemonic == MNEMONIC_JMP) || (mnemonic == MNEMONIC_CALL) 
+	if((mnemonic == MNEMONIC_JMP) || (mnemonic == MNEMONIC_CALL)
         	|| (mnemonic == MNEMONIC_LDS) || (mnemonic == MNEMONIC_STS)) {
 		pi->cseg_addr += 2;
 		pi->cseg_count += 2;

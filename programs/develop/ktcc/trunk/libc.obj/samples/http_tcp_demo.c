@@ -13,7 +13,7 @@ int main()
     sprintf(port_str, "%d", port);
     struct addrinfo hints;
     memset(&hints, 0, sizeof(hints));
-    hints.ai_family = AF_UNSPEC;     // IPv4 or IPv6 doesnt matter
+    hints.ai_family = AF_UNSPEC;     // IPv4 or IPv6 doesn't matter
     hints.ai_socktype = SOCK_STREAM; // TCP stream sockets
     if (getaddrinfo(host, port_str, 0, &addr_info) != 0) {
         printf("Host %s not found!\n", host);

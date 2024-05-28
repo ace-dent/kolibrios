@@ -15,7 +15,7 @@ checkbox colored_lines    = { COLORED_LINES };
 
 
 void settings_dialog()
-{   
+{
 	proc_info Settings;
 	int id;
 	active_settings = true;
@@ -28,8 +28,8 @@ void settings_dialog()
 			case evMouse:
 				edit_box_mouse stdcall (#path_start_ed);
 				break;
-				
-			case evButton: 
+
+			case evButton:
 				id=GetButtonID();
 				if (1==id) { ExitSettings(); break; }
 				else if (id==5)
@@ -53,25 +53,25 @@ void settings_dialog()
 				show_dev_name.click(id);
 				show_status_bar.click(id);
 				colored_lines.click(id);
-				if (font_size.click(id)) { 
-					kfont.size.pt = font_size.value; 
-					kfont.changeSIZE(); 
-					BigFontsChange(); 
+				if (font_size.click(id)) {
+					kfont.size.pt = font_size.value;
+					kfont.changeSIZE();
+					BigFontsChange();
 				}
-				if (line_height.click(id)) files.item_h = files_inactive.item_h = line_height.value; 
+				if (line_height.click(id)) files.item_h = files_inactive.item_h = line_height.value;
 				if (big_icons.click(id)) BigIconsSwitch();
 				EventRedrawWindow(Form.left,Form.top);
 				//RefreshWindow(Form.slot, Settings.slot);
 				break;
-					
+
 			case evKey:
 				GetKeys();
 				if (key_scancode==SCAN_CODE_ESC) ExitSettings();
-        edit_box_key_c stdcall (#path_start_ed,key_ascii << 8);	
+        edit_box_key_c stdcall (#path_start_ed,key_ascii << 8);
 				break;
-				
+
 			case evReDraw:
-				DefineAndDrawWindow(Form.cwidth-300/2+Form.left, Form.cheight-292/2+Form.top, 400, 
+				DefineAndDrawWindow(Form.cwidth-300/2+Form.left, Form.cheight-292/2+Form.top, 400,
 					-efm*42+345+skin_h,0x34,sc.work,TITLE_SETT,0);
 				GetProcessInfo(#Settings, SelfInfo);
 				DrawSettingsCheckBoxes();
@@ -102,7 +102,7 @@ void DrawSettingsCheckBoxes()
 	colored_lines.draw(XXX, y.inc(25));
 	font_size.draw(XXX, y.inc(31));
 	line_height.draw(XXX, y.inc(31));
-	
+
 	DrawFrame(XXX, y.inc(37), 340, 95, START_PATH);
 	// START_PATH {
 	DrawEditBoxPos(FRX, y.inc(21), #path_start_ed);
@@ -120,16 +120,16 @@ void LoadIniSettings()
 	if (efm) ini.section = "EFM"; else ini.section = "Eolite";
 
 	files.SetFont(6, 9, 10000000b);
-	show_dev_name.checked   = ini.GetInt("ShowDeviceName", true); 
-	show_status_bar.checked = ini.GetInt("ShowStatusBar", true); 
+	show_dev_name.checked   = ini.GetInt("ShowDeviceName", true);
+	show_status_bar.checked = ini.GetInt("ShowStatusBar", true);
 	big_icons.checked       = ini.GetInt("BigIcons", false); BigIconsSwitch();
-	colored_lines.checked   = ini.GetInt("ColoredLines", true); 
-	kfont.size.pt   = ini.GetInt("FontSize", 13); 
+	colored_lines.checked   = ini.GetInt("ColoredLines", true);
+	kfont.size.pt   = ini.GetInt("FontSize", 13);
 	files.item_h    = ini.GetInt("LineHeight", 19);
-	Form.left   = ini.GetInt("WinX", 100); 
-	Form.top    = ini.GetInt("WinY", 30); 
-	Form.width  = ini.GetInt("WinW", efm*170+550); 
-	Form.height = ini.GetInt("WinH", efm*100+517); 
+	Form.left   = ini.GetInt("WinX", 100);
+	Form.top    = ini.GetInt("WinY", 30);
+	Form.width  = ini.GetInt("WinW", efm*170+550);
+	Form.height = ini.GetInt("WinH", efm*100+517);
 	ini.GetString("DefaultPath", #path_start, 4096, "/sys");
 	path_start_ed.size = path_start_ed.pos = strlen(#path_start);
 	kfont.init(DEFAULT_FONT);
@@ -150,7 +150,7 @@ void SaveIniSettings()
 		ini.SetInt("WinX", Form.left);
 		ini.SetInt("WinY", Form.top);
 		ini.SetInt("WinW", Form.width);
-		ini.SetInt("WinH", Form.height);		
+		ini.SetInt("WinH", Form.height);
 	}
 }
 
@@ -160,7 +160,7 @@ void Write_Error(int error_number)
 {
 	char error_message[500];
 	sprintf(#error_message,"\"Eolite\n%s\" -tE", get_error(error_number));
-	notify(#error_message);	
+	notify(#error_message);
 }
 
 
@@ -168,7 +168,7 @@ void LoadIcons()
 {
 	dword selected_shadow = MixColors(col.selec, 0, 200);
 	dword non_white_shadow = MixColors(col.list_bg, 0, 200);
-	if (big_icons.checked) 
+	if (big_icons.checked)
 	{
 		icons32_default.load("/sys/icons32.png");
 		icons32_selected.load("/sys/icons32.png");
@@ -203,7 +203,7 @@ void SetAppColors()
 	if (sc.work == 0) sc.work = 1;
 	if (bg_col == sc.work) return;
 	bg_col = sc.work;
-	if (skin_is_dark()) 
+	if (skin_is_dark())
 	{
 		//use dark colors
 		col.skin_is_dark = true;
@@ -214,12 +214,12 @@ void SetAppColors()
 		col.lpanel  = MixColors(sc.line, sc.work, 65);
 		col.selec = col.selec_active = sc.button;
 		col.selec_text = sc.button_text;
-		if (col.list_bg==col.selec) col.selec = sc.line; //for fucking skins
+		if (col.list_bg==col.selec) col.selec = sc.line; //for skins
 		col.slider_bg_big = MixColors(0xCED0D0, sc.work, 35);
 		col.odd_line = MixColors(0xFFFfff, sc.work, 15);
 		for (i=0; blue_hl_pal[i]!=0; i++) waves_pal[i] = MixColors(col.lpanel, blue_hl_pal[i], 180);
 	}
-	else 
+	else
 	{
 		//use light colors
 		col.skin_is_dark = false;
@@ -256,10 +256,10 @@ void BigFontsChange()
 void BigIconsSwitch()
 {
 	if (big_icons.checked) {
-		icon_size = 32; 
+		icon_size = 32;
 		LoadIcons();
 	} else {
-		icon_size = icons16_default.w; 
+		icon_size = icons16_default.w;
 	}
 	BigFontsChange();
 }

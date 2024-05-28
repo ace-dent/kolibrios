@@ -226,7 +226,7 @@ static void upload_STIPPLE(struct i915_context *i915)
       p[2] = mask[4] & 0xf;
       p[3] = mask[0] & 0xf;
 
-      /* Not sure what to do about fallbacks, so for now just dont:
+      /* Not sure what to do about fallbacks, so for now just don't:
        */
       st[1] |= ((p[0] << 0) |
                 (p[1] << 4) |

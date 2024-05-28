@@ -3,7 +3,7 @@
 /*
 Simple hashtable with open adressing linear probe.
 Unlike text book examples, removing entries works
-correctly in this implementation, so it wont start
+correctly in this implementation, so it won't start
 exhibiting bad behaviour if entries are inserted
 and removed frequently.
 */

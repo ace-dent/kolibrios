@@ -1,5 +1,5 @@
 /*
- * VP8 ARMv6 optimisations
+ * VP8 ARMv6 optimizations
  *
  * Copyright (c) 2010 Google Inc.
  * Copyright (c) 2010 Rob Clark <rob@ti.com>

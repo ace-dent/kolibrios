@@ -49,7 +49,7 @@ static void mpegvideo_extract_headers(AVCodecParserContext *s,
     int vbv_delay = 0;
     int chroma_format;
     enum AVPixelFormat pix_fmt = AV_PIX_FMT_NONE;
-//FIXME replace the crap with get_bits()
+//FIXME replace the junk with get_bits()
     s->repeat_pict = 0;
 
     while (buf < buf_end) {

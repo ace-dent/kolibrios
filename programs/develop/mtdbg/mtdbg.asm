@@ -680,7 +680,7 @@ dbgmsgstart:
         call    set_context
         pop     esi
 
-    ; TODO: WTF? Need for meaning label names
+    ; TODO: Really need meaningful label names!
     .5:
         push    esi
         call    get_dump

@@ -25,7 +25,7 @@
 
 #include "targ-cpu.h"
 
-/* This internal_lineno crap is to stop namespace pollution from the
+/* This internal_lineno junk is to stop namespace pollution from the
    bfd internal coff headerfile.  */
 #define internal_lineno bfd_internal_lineno
 #include "coff/internal.h"

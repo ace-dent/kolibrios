@@ -296,7 +296,7 @@ m_right:                                  ; turn right
 draw_window:
 
 	mcall	12,1
-	
+
 	mcall 48, 4                             ;get skin width
 	lea	ecx, [50*65536+484+eax]             ;[y start] *65536 + [y size] + [skin_height]
 	mcall	0,<50,649>,,0x74ffffff,,title   ;draw window
@@ -656,7 +656,7 @@ copyfloor:
 
     add edi,64
     sub esi,1
-    cmp esi, 502  ; dont calc offscreen-pixels
+    cmp esi, 502  ; don't calc offscreen-pixels
     jg speedup
 
     xor edx,edx

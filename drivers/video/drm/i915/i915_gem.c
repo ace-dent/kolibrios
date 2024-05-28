@@ -2738,7 +2738,7 @@ retire:
  *  -ENONENT: object doesn't exist
  * Also possible, but rare:
  *  -EAGAIN: GPU wedged
- *  -ENOMEM: damn
+ *  -ENOMEM: darn!
  *  -ENODEV: Internal IRQ fail
  *  -E?: The add request failed
  *

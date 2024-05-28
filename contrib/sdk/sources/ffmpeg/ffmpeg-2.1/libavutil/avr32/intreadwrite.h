@@ -36,7 +36,7 @@
  * the LDINS.B instruction, which gcc fails to utilise with the
  * generic code.  GCC also fails to use plain LD.W and ST.W even for
  * AP processors, so we override the generic code.  The 64-bit
- * versions are improved by using our optimised 32-bit functions.
+ * versions are improved by using our optimized 32-bit functions.
  */
 
 #define AV_RL16 AV_RL16

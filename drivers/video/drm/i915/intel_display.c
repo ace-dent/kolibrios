@@ -15630,7 +15630,7 @@ static void intel_sanitize_crtc(struct intel_crtc *crtc)
 		 * We start out with underrun reporting disabled to avoid races.
 		 * For correct bookkeeping mark this on active crtcs.
 		 *
-		 * Also on gmch platforms we dont have any hardware bits to
+		 * Also on gmch platforms we don't have any hardware bits to
 		 * disable the underrun reporting. Which means we need to start
 		 * out with underrun reporting disabled also on inactive pipes,
 		 * since otherwise we'll complain about the garbage we read when

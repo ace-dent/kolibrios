@@ -138,7 +138,7 @@ static inline void ljpeg_encode_yuv_mb(LJpegEncContext *s, PutBitContext *pb,
                 for (x = 0; x < h; x++) {
                     int pred;
 
-                    ptr = frame->data[i] + (linesize * (v * mb_y + y)) + (h * mb_x + x); //FIXME optimize this crap
+                    ptr = frame->data[i] + (linesize * (v * mb_y + y)) + (h * mb_x + x); //FIXME optimize this junk
                     if (y == 0 && mb_y == 0) {
                         if (x == 0 && mb_x == 0)
                             pred = 128;
@@ -172,7 +172,7 @@ static inline void ljpeg_encode_yuv_mb(LJpegEncContext *s, PutBitContext *pb,
                 for (x = 0; x < h; x++) {
                     int pred;
 
-                    ptr = frame->data[i] + (linesize * (v * mb_y + y)) + (h * mb_x + x); //FIXME optimize this crap
+                    ptr = frame->data[i] + (linesize * (v * mb_y + y)) + (h * mb_x + x); //FIXME optimize this junk
                     PREDICT(pred, ptr[-linesize - 1], ptr[-linesize], ptr[-1], predictor);
 
                     if (i == 0)

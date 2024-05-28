@@ -189,7 +189,7 @@ along with GCC; see the file COPYING3.  If not see
    in_section = NULL)
 
 /* Older versions of gas don't handle 'r' as data.
-   Explicitly set data flag with 'd'.  */  
+   Explicitly set data flag with 'd'.  */
 #define READONLY_DATA_SECTION_ASM_OP "\t.section .rdata,\"dr\""
 
 /* Don't allow flag_pic to propagate since gas may produce invalid code
@@ -350,7 +350,7 @@ do {						\
 /* If configured with --disable-sjlj-exceptions, use DWARF2, else
    default to SJLJ.  */
 #if  (defined (CONFIG_SJLJ_EXCEPTIONS) && !CONFIG_SJLJ_EXCEPTIONS)
-/* The logic of this #if must be kept synchronised with the logic
+/* The logic of this #if must be kept synchronized with the logic
    for selecting the tmake_eh_file fragment in config.gcc.  */
 #define DWARF2_UNWIND_INFO 1
 /* If multilib is selected break build as sjlj is required.  */

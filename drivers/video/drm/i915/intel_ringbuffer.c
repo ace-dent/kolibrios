@@ -1207,7 +1207,7 @@ static int init_render_ring(struct intel_engine_cs *ring)
 	if (INTEL_INFO(dev)->gen >= 4 && INTEL_INFO(dev)->gen < 7)
 		I915_WRITE(MI_MODE, _MASKED_BIT_ENABLE(VS_TIMER_DISPATCH));
 
-	/* We need to disable the AsyncFlip performance optimisations in order
+	/* We need to disable the AsyncFlip performance optimizations in order
 	 * to use MI_WAIT_FOR_EVENT within the CS. It should already be
 	 * programmed to '1' on all products.
 	 *

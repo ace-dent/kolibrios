@@ -1423,7 +1423,7 @@ FMA_INSTR  pmacsww,  pmullw, paddw
 FMA_INSTR pmadcswd, pmaddwd, paddd
 
 ; tzcnt is equivalent to "rep bsf" and is backwards-compatible with bsf.
-; This lets us use tzcnt without bumping the yasm version requirement yet.
+; This let's us use tzcnt without bumping the yasm version requirement yet.
 %define tzcnt rep bsf
 
 ; convert FMA4 to FMA3 if possible

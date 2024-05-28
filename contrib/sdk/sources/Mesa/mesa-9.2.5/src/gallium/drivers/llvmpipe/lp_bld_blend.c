@@ -108,7 +108,7 @@ lp_build_blend_func(struct lp_build_context *bld,
 
 
 /**
- * Performs optimisations and blending independent of SoA/AoS
+ * Performs optimizations and blending independent of SoA/AoS
  *
  * @param func                   the blend function
  * @param factor_src             PIPE_BLENDFACTOR_xxx
@@ -123,7 +123,7 @@ lp_build_blend_func(struct lp_build_context *bld,
  *  SoA: always true as it is only one channel at a time
  *  AoS: rgb_src_factor == alpha_src_factor && rgb_dst_factor == alpha_dst_factor
  *
- * Note that pretty much every possible optimisation can only be done on non-unorm targets
+ * Note that pretty much every possible optimization can only be done on non-unorm targets
  * due to unorm values not going above 1.0 meaning factorisation can change results.
  * e.g. (0.9 * 0.9) + (0.9 * 0.9) != 0.9 * (0.9 + 0.9) as result of + is always <= 1.
  */

@@ -259,7 +259,7 @@ intelReadPixels(struct gl_context * ctx,
    if(ok)
       return;
 
-   /* glReadPixels() wont dirty the front buffer, so reset the dirty
+   /* glReadPixels() won't dirty the front buffer, so reset the dirty
     * flag after calling intel_prepare_render(). */
    dirty = brw->front_buffer_dirty;
    intel_prepare_render(brw);

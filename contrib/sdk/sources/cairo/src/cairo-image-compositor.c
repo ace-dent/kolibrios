@@ -988,7 +988,7 @@ composite_glyphs_via_mask (void				*_dst,
 	return _cairo_error (CAIRO_STATUS_NO_MEMORY);
 
     /* XXX convert the glyphs to common formats a8/a8r8g8b8 to hit
-     * optimised paths through pixman. Should we increase the bit
+     * optimized paths through pixman. Should we increase the bit
      * depth of the target surface, we should reconsider the appropriate
      * mask formats.
      */

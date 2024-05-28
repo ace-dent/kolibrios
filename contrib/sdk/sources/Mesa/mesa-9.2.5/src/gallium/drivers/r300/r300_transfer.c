@@ -169,7 +169,7 @@ r300_texture_transfer_map(struct pipe_context *ctx,
                                             &base));
 
             if (!trans->linear_texture) {
-                /* Oh crap, the thing can't create the texture.
+                /* Oh no(!!), the thing can't create the texture.
                  * Let's flush and try again. */
                 r300_flush(ctx, 0, NULL);
 

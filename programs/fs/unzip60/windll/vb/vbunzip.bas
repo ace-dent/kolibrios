@@ -337,7 +337,7 @@ Public Function UZDLLPrnt(ByRef fname As UNZIPCBChar, ByVal x As Long) As Long
     Case 0
       Exit For
     Case 10
-      s0 = s0 & vbNewLine     ' Damn UNIX :-)
+      s0 = s0 & vbNewLine     ' Darn UNIX :-)
     Case 92 ' = Asc("\")
       s0 = s0 & "/"
     Case Else

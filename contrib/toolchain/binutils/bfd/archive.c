@@ -1024,7 +1024,7 @@ do_slurp_coff_armap (bfd *abfd)
   /* ... except that some archive formats are broken, and it may be our
      fault - the i960 little endian coff sometimes has big and sometimes
      little, because our tools changed.  Here's a horrible hack to clean
-     up the crap.  */
+     up the junk.  */
 
   if (stringsize > 0xfffff
       && bfd_get_arch (abfd) == bfd_arch_i960

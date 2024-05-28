@@ -248,7 +248,7 @@ version 0.9.23:
 
 version 0.9.22:
 
-- simple memory optimisations: kernel compilation is 30% faster
+- simple memory optimizations: kernel compilation is 30% faster
 - linker symbol definitions fixes
 - gcc 3.4 fixes
 - fixed value stack full error
@@ -273,7 +273,7 @@ version 0.9.21:
 - section alignment fixes
 - bit fields fixes
 - do not generate code for unused inline functions
-- '-oformat' linker option. 
+- '-oformat' linker option.
 - added 'binary' output format.
 
 version 0.9.20:
@@ -487,7 +487,7 @@ version 0.9.3:
  - full ISOC99 64 bit 'long long' support.
  - full 32 bit 'float', 64 bit 'double' and 96 bit 'long double' support.
  - added '-U' option.
- - added assembly sections support. 
+ - added assembly sections support.
  - even faster startup time by mmaping sections instead of mallocing them.
  - added GNUC __attribute__ keyword support (currently supports
     'section' and 'aligned' attributes).

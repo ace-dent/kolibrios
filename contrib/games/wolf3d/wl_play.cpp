@@ -734,7 +734,7 @@ void CheckKeys (void)
         fontnumber = 0;
         SETFONTCOLOR (0, 15);
         if (DebugKeys () && viewsize < 20)
-            DrawPlayBorder ();       // dont let the blue borders flash
+            DrawPlayBorder ();       // Don't let the blue borders flash
 
         if (MousePresent && IN_IsInputGrabbed())
             IN_CenterMouse();     // Clear accumulated mouse movement

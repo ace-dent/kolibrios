@@ -3232,7 +3232,7 @@ _cairo_pdf_surface_emit_pattern_stops (cairo_pdf_surface_t      *surface,
 	 * don't want a function with an empty domain, because that
 	 * would provoke underdefined behaviour from rasterisers.
 	 * This can only happen with EXTEND_PAD, because EXTEND_NONE
-	 * is optimised into a clear pattern in cairo-gstate, and
+	 * is optimized into a clear pattern in cairo-gstate, and
 	 * REFLECT/REPEAT are always transformed to have the first
 	 * stop at t=0 and the last stop at t=1.  Thus we want a step
 	 * function going from the first color to the last one.

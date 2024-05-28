@@ -429,7 +429,7 @@ static int mapping0_forward(vorbis_block *vb){
       }
 #endif
 
-      /* second step: 'all the other crap'; all the stuff that isn't
+      /* second step: 'all the other junk'; all the stuff that isn't
          computed/fit for bitrate management goes in the second psy
          vector.  This includes tone masking, peak limiting and ATH */
 

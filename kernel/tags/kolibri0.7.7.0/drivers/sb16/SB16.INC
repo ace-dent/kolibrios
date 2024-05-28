@@ -260,7 +260,7 @@ proc sb_set_master_vol
 	div  ebx
 	imul eax,17
 	mov  edx,[sb_base_port]
-	push eax      ;here for optimisation
+	push eax      ;here for optimization
 	add  dl,4
 	mov  al,0x22  ;write mixer register 0x22
 	out  dx,al
@@ -278,13 +278,13 @@ proc sb_set_master_vol
 	imul eax,17
 	div  ebx
 	mov  edx,[sb_base_port]
-	push eax      ;here for optimisation
+	push eax      ;here for optimization
 	add  dl,4
 	mov  al,0x30  ;left speaker
 	out  dx,al
 	pop  eax      ;<--+
 	inc  edx      ;   \/
-	push eax      ;here for optimisation
+	push eax      ;here for optimization
 	out  dx,al    ;write
 	dec  edx
 	mov  al,0x31  ;right speaker

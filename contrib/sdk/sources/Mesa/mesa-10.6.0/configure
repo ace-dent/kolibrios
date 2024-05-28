@@ -7784,7 +7784,7 @@ else
   osf*)
     # Dr. Hans Ekkehard Plesser reports seeing a kernel panic running configure
     # due to this test when exec_disable_arg_limit is 1 on Tru64. It is not
-    # nice to cause kernel panics so lets avoid the loop below.
+    # nice to cause kernel panics so let's avoid the loop below.
     # First set a reasonable default.
     lt_cv_sys_max_cmd_len=16384
     #

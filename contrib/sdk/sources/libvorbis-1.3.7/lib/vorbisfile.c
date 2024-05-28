@@ -1115,7 +1115,7 @@ long ov_bitrate(OggVorbis_File *vf,int i){
     for(i=0;i<vf->links;i++)
       bits+=(vf->offsets[i+1]-vf->dataoffsets[i])*8;
     /* This once read: return(rint(bits/ov_time_total(vf,-1)));
-     * gcc 3.x on x86 miscompiled this at optimisation level 2 and above,
+     * gcc 3.x on x86 miscompiled this at optimization level 2 and above,
      * so this is slightly transformed to make it work.
      */
     br = bits/ov_time_total(vf,-1);

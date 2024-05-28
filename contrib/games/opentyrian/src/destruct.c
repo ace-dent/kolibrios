@@ -403,7 +403,7 @@ static enum de_unit_t get_unit_by_name( const char *unit_name )
 	for (enum de_unit_t unit = UNIT_FIRST; unit < MAX_UNITS; ++unit)
 		if (strcmp(unit_name, unit_names[unit]) == 0)
 			return unit;
-	
+
 	return UNIT_NONE;
 }
 
@@ -412,48 +412,48 @@ static SDLKey get_SDLKey_by_name( const char *key_name )
 	for (SDLKey key = SDLK_FIRST; key < SDLK_LAST; ++key)
 		if (strcmp(key_name, SDL_GetKeyName(key)) == 0)
 			return key;
-	
+
 	return SDLK_UNKNOWN;
 }
 
 static void load_destruct_config( Config *config_ )
 {
 	ConfigSection *section;
-	
+
 	section = config_find_or_add_section(config_, "destruct", NULL);
 	if (section == NULL)
 		exit(EXIT_FAILURE);  // out of memory
-	
+
 	config.alwaysalias = config_get_or_set_bool_option(section, "antialias craters", false, NO_YES);
-	
+
 	weaponSystems[UNIT_LASER][SHOT_LASERTRACER] = config_get_or_set_bool_option(section, "tracer laser", false, OFF_ON);
-	
+
 	config.max_shots = config_get_or_set_int_option(section, "max shots", 40);
 	config.max_explosions = config_get_or_set_int_option(section, "max explosions", 40);
 	config.min_walls = config_get_or_set_int_option(section, "min walls", 20);
 	config.max_walls = config_get_or_set_int_option(section, "max walls", 20);
-	
+
 	config.ai[0] = config_get_or_set_bool_option(section, "left ai", true, NO_YES);
 	config.jumper_straight[0] = config_get_or_set_bool_option(section, "left jumper fires straight", true, NO_YES);
 	config.ai[1] = config_get_or_set_bool_option(section, "right ai", false, NO_YES);
 	config.jumper_straight[1] = config_get_or_set_bool_option(section, "right jumper fires straight", false, NO_YES);
-	
+
 	// keyboard controls
-	
+
 	for (int p = 0; p < MAX_PLAYERS; ++p)
 	{
 		section = config_find_section(config_, "destruct keyboard", player_names[p]);
 		if (section == NULL)
 			if ((section = config_add_section(config_, "destruct keyboard", player_names[p])) == NULL)
 				exit(-1);
-		
+
 		ConfigOption *option;
-		
+
 		for (int k = 0; k < MAX_KEY; ++k)
 		{
 			if ((option = config_get_or_set_option(section, key_names[k], NULL)) == NULL)
 				exit(-1);
-			
+
 			foreach_option_i_value(i, value, option)
 			{
 				SDLKey key = get_SDLKey_by_name(value);
@@ -467,7 +467,7 @@ static void load_destruct_config( Config *config_ )
 					continue;
 				}
 			}
-			
+
 			if (config_get_value_count(option) > 0)
 			{
 				// unset remaining defaults
@@ -483,29 +483,29 @@ static void load_destruct_config( Config *config_ )
 			}
 		}
 	}
-	
+
 	// custom destruct mode
-	
+
 	section = config_find_section(config_, "destruct custom", NULL);
 	if (section == NULL)
 		if ((section = config_add_section(config_, "destruct custom", NULL)) == NULL)
 			exit(-1);
-	
+
 	config.allow_custom = config_get_or_set_bool_option(section, "enable", false, NO_YES);
-	
+
 	char buffer[15 + 1];
-	
+
 	for (int p = 0; p < MAX_PLAYERS; ++p)
 	{
 		snprintf(buffer, sizeof(buffer), "%s num units", player_names[p]);
 		basetypes[8 + p][0] = config_get_or_set_int_option(section, buffer, basetypes[8 + p][0]);
-		
+
 		ConfigOption *option;
-		
+
 		snprintf(buffer, sizeof(buffer), "%s unit", player_names[p]);
 		if ((option = config_get_or_set_option(section, buffer, NULL)) == NULL)
 			exit(-1);
-		
+
 		foreach_option_i_value(i, value, option)
 		{
 			enum de_unit_t unit = get_unit_by_name(value);
@@ -519,7 +519,7 @@ static void load_destruct_config( Config *config_ )
 				continue;
 			}
 		}
-		
+
 		if (config_get_value_count(option) > 0)
 		{
 			// set remaining units to tank
@@ -1424,7 +1424,7 @@ static void DE_ResetActions( void )
 }
 /* DE_RunTick
  *
- * Runs one tick.  One tick involves handling physics, drawing crap,
+ * Runs one tick.  One tick involves handling physics, drawing stuff,
  * moving projectiles and explosions, and getting input.
  * Returns true while the game is running or false if the game is
  * to be terminated.

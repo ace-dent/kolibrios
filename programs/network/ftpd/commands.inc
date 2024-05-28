@@ -358,7 +358,7 @@ cmdCDUP:
         jz      permission_denied
 
         cmp     byte [ebp + thread_data.work_dir+1], 0  ; are we in "/" ?
-        je      .done                                   ; if so, we cant go up..
+        je      .done                                   ; if so, we can't go up.
 
 ; find the end of asciiz string work_dir
         mov     ecx, 1024

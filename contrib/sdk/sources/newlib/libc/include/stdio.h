@@ -76,8 +76,8 @@ typedef _fpos64_t fpos64_t;
 #define	__SMBF	0x0080		/* _buf is from malloc */
 #define	__SAPP	0x0100		/* fdopen()ed in append mode - so must  write to end */
 #define	__SSTR	0x0200		/* this is an sprintf/snprintf string */
-#define	__SOPT	0x0400		/* do fseek() optimisation */
-#define	__SNPT	0x0800		/* do not do fseek() optimisation */
+#define	__SOPT	0x0400		/* do fseek() optimization */
+#define	__SNPT	0x0800		/* do not do fseek() optimization */
 #define	__SOFF	0x1000		/* set iff _offset is in fact correct */
 #define	__SORD	0x2000		/* true => stream orientation (byte/wide) decided */
 #if defined(__CYGWIN__)
@@ -633,7 +633,7 @@ FILE *_EXFUN(_fopencookie_r,(struct _reent *, void *__cookie,
 
 #ifndef __CUSTOM_FILE_IO__
 /*
- * The __sfoo macros are here so that we can 
+ * The __sfoo macros are here so that we can
  * define function versions in the C library.
  */
 #define       __sgetc_raw_r(__ptr, __f) (--(__f)->_r < 0 ? __srget_r(__ptr, __f) : (int)(*(__f)->_p++))
@@ -642,7 +642,7 @@ FILE *_EXFUN(_fopencookie_r,(struct _reent *, void *__cookie,
 /*  For a platform with CR/LF, additional logic is required by
   __sgetc_r which would otherwise simply be a macro; therefore we
   use an inlined function.  The function is only meant to be inlined
-  in place as used and the function body should never be emitted.  
+  in place as used and the function body should never be emitted.
 
   There are two possible means to this end when compiling with GCC,
   one when compiling with a standard C99 compiler, and for other

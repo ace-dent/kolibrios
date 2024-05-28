@@ -1554,8 +1554,8 @@
 	* bits/fstream.tcc: Adjust.
 	* bits/std_fstream.h: Move and rename the following functions:
  	_M_set_ideterminate, _M_is_indeterminate, _M_set_determinate are
- 	now declared and defined in the base class, basic_streambuf.  Oh
- 	fuck it, move data members _M_buf, and _M_buf_size into
+ 	now declared and defined in the base class, basic_streambuf.
+ 	Move data members _M_buf, and _M_buf_size into
  	basic_streambuf as well.
 
 	* bits/ostream.tcc: Tweak.

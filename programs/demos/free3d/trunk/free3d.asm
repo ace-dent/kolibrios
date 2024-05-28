@@ -80,7 +80,7 @@ load_libraries	l_libs_start,end_l_libs
 	mov	ecx,360*10
 	fninit
 	fld	[sindegree]
-;--------------------------------------	
+;--------------------------------------
 .sinlp:
 	fst	st1
 	fsin
@@ -92,7 +92,7 @@ load_libraries	l_libs_start,end_l_libs
 ;---------------------------------------------------------------------
 	call	cursor_to_screen_center
 	call	set_new_cursor_skin
-;---------------------------------------------------------------------	
+;---------------------------------------------------------------------
 align	4
 red:	; redraw
 	call	draw_window
@@ -129,7 +129,7 @@ mouse:
 	xor	edx,edx
 	mov	dx,cx  ; EDX mouse y old
 	shr	ecx,16 ; ECX mouse x old
-	
+
 	cmp	eax,ecx
 	je	.y	;still
 	ja	.turn_left
@@ -154,12 +154,12 @@ mouse:
 	je	.red
 	ja	.walk_down
 ;--------------------------------------
-.walk_up:	
+.walk_up:
 	sub	edx,ebx
 	mov	ecx,edx
 	call	prepare_2
 	jz	.1
-;--------------------------------------	
+;--------------------------------------
 	add	eax,edi	; newPx
 	add	ebx,esi	; newPy
 	jmp	.1
@@ -169,7 +169,7 @@ mouse:
 	mov	ecx,ebx
 	call	prepare_2
 	jz	.1
-	
+
 	sub	eax,edi	; newPx
 	sub	ebx,esi	; newPy
 ;--------------------------------------
@@ -183,8 +183,8 @@ mouse:
 	lea	ecx,[grid+ecx+edi]
 	cmp	[ecx],byte 0
 	je	@f
-	
-	call	cursor_to_screen_center	
+
+	call	cursor_to_screen_center
 	jmp	still	;cannotwalk
 ;---------------------------------------------------------------------
 @@:
@@ -223,7 +223,7 @@ check_range:
 	jle	@f
 
 	xor	edi,edi
-;--------------------------------------	
+;--------------------------------------
 @@:
 .store:
 	mov	[vheading],edi
@@ -418,7 +418,7 @@ finish:
 align	4
 draw_window:
 	mcall	12,1
-	
+
 	mcall	0,<50,649>,<50,484>,0x01000000,0x01000000,0x01000000
 
 	mcall	12,2
@@ -494,13 +494,13 @@ raycast:
 
 ;	cmp	edi,32
 ;	je	double
-	
+
 ;	cmp	edi,512
 ;	je	double
-	
+
 ;	cmp	edi,1024
 ;	je	double
-	
+
 ;	jmp	nodouble
 ;---------------------------------------------------------------------
 ;double:
@@ -660,7 +660,7 @@ nodark0:
 	sub	edx,1920
 	cmp	esi,edx
 	je	foff0
-	
+
 	mov	[edx+1920],eax
 ;--------------------------------------
 align	4
@@ -733,7 +733,7 @@ copyfloor:
 	sub	edi,[vdd]
 	cmp	edi,0
 	jg	ok3
-	
+
 	xor	edi,edi
 ;--------------------------------------
 ok3:
@@ -756,7 +756,7 @@ pixelrow:
 ; find each pixels color:
 	add	edi,ICON_SIZE_Y
 	sub	esi,1
-	cmp	esi,502		; dont calc offscreen-pixels
+	cmp	esi,502		; don't calc offscreen-pixels
 	jg	speedup
 
 	xor	edx,edx
@@ -920,11 +920,11 @@ copyfloor2:
 	mov	ebx,[vx1]
 	lea	ebx,[ebx+ebx*2]
 	add	ebx,eax
-	
+
 	mov	ecx,[ebx-15]
 	and	ecx,0x00FEFEFE
 	shr	ecx,1
-	
+
 	mov	edx,[ebx-12]
 	and	edx,0x00FEFEFE
 	shr	edx,1
@@ -1020,7 +1020,7 @@ notblack20b:
 	jg	notblack30b
 
 	mov	[blue_color],dword 0
-;--------------------------------------	
+;--------------------------------------
 align	4
 notblack30b:
 	shl	dword [red_color],16	; reassemble rgb
@@ -1052,7 +1052,7 @@ load_icons:
 	mov	ecx,[file_info+32]
 	mov	[fileinfo.size],ecx
 	mov	[img_size],ecx
-	
+
 	mcall	68,12
 	test	eax,eax
 	jz	finish	;memory_get_error
@@ -1265,10 +1265,10 @@ aCP_Assoc	db 'Associations',0
 align	4
 UNPACK_import:
 ;unpack_Version			dd aUnpack_Version
-;unpack_PluginLoad		dd aUnpack_PluginLoad	
+;unpack_PluginLoad		dd aUnpack_PluginLoad
 ;unpack_OpenFilePlugin		dd aUnpack_OpenFilePlugin
 ;unpack_ClosePlugin		dd aUnpack_ClosePlugin
-;unpack_ReadFolder		dd aUnpack_ReadFolder	
+;unpack_ReadFolder		dd aUnpack_ReadFolder
 ;unpack_SetFolder		dd aUnpack_SetFolder
 ;unpack_GetFiles		dd aUnpack_GetFiles
 ;unpack_GetOpenPluginInfo	dd aUnpack_GetOpenPluginInfo

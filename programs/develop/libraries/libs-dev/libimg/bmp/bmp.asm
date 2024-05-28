@@ -417,7 +417,7 @@ endl
 	stosw
 	mov	ax, 32	; BitCount
 	stosw
-	mov	eax, 3	; WTF? bmp.BI_RGB
+	mov	eax, 3	; Unexpected!? bmp.BI_RGB
 	stosd
 	mov	eax, [encoded_data_size]
 	stosd
@@ -1029,7 +1029,7 @@ endl
   .next_line:
 	push	ecx
 	mov	ecx, [edx + Image.Width]
-	
+
   .next_pixel:
 	push	ecx
 
@@ -1090,7 +1090,7 @@ endl
 	or	eax, -1
 	pop	edi
 	ret
-	
+
 .calc_shift:
 	xor	eax, eax
 	or	ecx, ecx

@@ -398,7 +398,7 @@ static void agp_v3_parse_one(u32_t *requested_mode,
 
 		/*
 		 * If we didn't specify AGPx8, we can only do x4.
-		 * If the hardware can't do x4, we're up shit creek, and never
+		 * If the hardware can't do x4, we're in trouble, and never
 		 *  should have got this far.
 		 */
 		*bridge_agpstat &= ~(AGPSTAT3_8X | AGPSTAT3_RSVD);

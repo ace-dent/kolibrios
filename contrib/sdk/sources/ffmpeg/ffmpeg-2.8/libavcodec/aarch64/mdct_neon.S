@@ -1,5 +1,5 @@
 /*
- * AArch64 NEON optimised MDCT
+ * AArch64 NEON optimized MDCT
  * Copyright (c) 2009 Mans Rullgard <mans@mansr.com>
  * Copyright (c) 2014 Janne Grunau <janne-libav@jannau.net>
  *

@@ -26,7 +26,7 @@
 
 /*
  * Small standard I/O/seek/close functions.
- * These maintain the `known seek offset' for seek optimisation.
+ * These maintain the `known seek offset' for seek optimization.
  */
 
 _READ_WRITE_RETURN_TYPE

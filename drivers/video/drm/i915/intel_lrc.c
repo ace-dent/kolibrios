@@ -1604,7 +1604,7 @@ static int gen8_init_render_ring(struct intel_engine_cs *ring)
 	if (ret)
 		return ret;
 
-	/* We need to disable the AsyncFlip performance optimisations in order
+	/* We need to disable the AsyncFlip performance optimizations in order
 	 * to use MI_WAIT_FOR_EVENT within the CS. It should already be
 	 * programmed to '1' on all products.
 	 *

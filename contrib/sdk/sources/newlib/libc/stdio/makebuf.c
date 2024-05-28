@@ -113,7 +113,7 @@ _DEFUN(__swhatbuf_r, (ptr, fp, bufsize, couldbetty),
   if (st.st_blksize > 0)
     {
       /*
-       * Optimise fseek() only if it is a regular file.  (The test for
+       * Optimize fseek() only if it is a regular file.  (The test for
        * __sseek is mainly paranoia.)  It is safe to set _blksize
        * unconditionally; it will only be used if __SOPT is also set.
        */

@@ -320,7 +320,7 @@ align 4
 ;-----------------------------------------------------------------------------
 ;***********************************************
 ;*  SEND TO ATAPI DEVICE PACKET COMMAND,       *
-;*     THAT DOESNT MEAN TRANSMIT DATA          *
+;*     THAT DOESN'T MEAN TRANSMIT DATA         *
 ;* Input parameters are passed through global  *
 ;* variables:                                  *
 ;* ChannelNumber - channel number;             *

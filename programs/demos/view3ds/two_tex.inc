@@ -865,7 +865,7 @@ end if
       ;  pminsw  mm0,mm1
       ;  movd    .x2,mm0
  ;       cmp     .x2,SIZE_X  ;eax   |
- ;       jl      @f                 |>       this dont work idk cause
+ ;       jl      @f                 |>       this don't work idk cause
  ;       mov     .x2,SIZE_X ;eax    |
       @@:
       ;  movzx   eax,word[size_x_var]       ;calc memory begin in buffers

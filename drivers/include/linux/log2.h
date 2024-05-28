@@ -80,7 +80,7 @@ unsigned long __rounddown_pow_of_two(unsigned long n)
  * - this can be used to initialise global variables from constant data, hence
  *   the massive ternary operator construction
  *
- * selects the appropriately-sized optimised version depending on sizeof(n)
+ * selects the appropriately-sized optimized version depending on sizeof(n)
  */
 #define ilog2(n)				\
 (						\

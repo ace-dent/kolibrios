@@ -1,5 +1,5 @@
 /*
- * ARM NEON optimised RDFT
+ * ARM NEON optimized RDFT
  * Copyright (c) 2009 Mans Rullgard <mans@mansr.com>
  *
  * This file is part of FFmpeg.

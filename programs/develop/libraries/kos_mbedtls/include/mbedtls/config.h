@@ -782,7 +782,7 @@
  * Depending on the prime and architecture, makes operations 4 to 8 times
  * faster on the corresponding curve.
  *
- * Comment this macro to disable NIST curves optimisation.
+ * Comment this macro to disable NIST curves optimization.
  */
 #define MBEDTLS_ECP_NIST_OPTIM
 

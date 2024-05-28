@@ -762,7 +762,7 @@ proc HTTP_receive identifier ;//////////////////////////////////////////////////
   .end_of_header:
         add     edi, 4 - http_msg.http_header
         sub     edi, ebp
-        mov     [ebp + http_msg.header_length], edi     ; If this isnt the final header, we'll use this as an offset to find real header.
+        mov     [ebp + http_msg.header_length], edi     ; If this is not the final header, we'll use this as an offset to find real header.
         DEBUGF  1, "Header length: %u\n", edi
 
 ; Ok, we have found the header
@@ -1032,7 +1032,7 @@ proc HTTP_receive identifier ;//////////////////////////////////////////////////
         mov     ebx, [buffersize]
         sub     [ebp + http_msg.write_ptr], ebx
   @@:
-        ; Header was already parsed and connection isnt chunked.
+        ; Header was already parsed and connection is not chunked.
         ; Update content_received
         add     [ebp + http_msg.content_received], eax
         ; If we received content-length parameter, check if we received all the data
@@ -1076,7 +1076,7 @@ proc HTTP_receive identifier ;//////////////////////////////////////////////////
 
   .need_more_data_for_header:
         cmp     [ebp + http_msg.buffer_length], 0
-        je      .err_header                     ; It's just too damn long!
+        je      .err_header                     ; It's just too long!
         ; Need more data
         popa
         xor     eax, eax

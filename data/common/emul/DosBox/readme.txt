@@ -110,7 +110,7 @@ FULLSCREEN: My fullscreen is too large.
     on top of dosbox resizing the screen, which can happen for the output:
     ddraw, opengl, openglnb, overlay. You can disable this Windows behaviour
     by enabling a specific compatibility setting:
- 
+
     - Right-click the DOSBox icon and select "Properties".
     - Go to the "Compatibility" tab.
     - Click on "Change high DPI settings".
@@ -356,7 +356,7 @@ dosbox [name] [-exit] [-c command] [-fullscreen] [-userconf]
        [-machine machine type] [-noconsole] [-startmapper] [-noautoexec]
        [-securemode] [-scaler scaler | -forcescaler scaler] [-version]
        [-socket socket]
-       
+
 dosbox -version
 dosbox -editconf program
 dosbox -opencaptures program
@@ -383,7 +383,7 @@ dosbox -erasemapper
 
   -userconf
         Start DOSBox with the users specific configuration file. Can be used
-        together with multiple -conf parameters, but -userconf will always be 
+        together with multiple -conf parameters, but -userconf will always be
         loaded before them.
 
   -conf configfilelocation
@@ -749,8 +749,8 @@ MIXER
      'id' is the number for the device as listed by LISTMIDI. eg. midiconfig=2
 
      In Linux this option doesn't work, but you get similar results by using
-     'pmidi -l' in console. Then change the line 'midiconfig=' to 
-     'midiconfig=port', where 'port' is the port for the device as listed by 
+     'pmidi -l' in console. Then change the line 'midiconfig=' to
+     'midiconfig=port', where 'port' is the port for the device as listed by
      'pmidi -l'. eg. midiconfig=128:0
 
 
@@ -830,7 +830,7 @@ BOOT
   the operating system emulation offered by DOSBox. This will allow you to
   play booter floppies or boot other operating systems inside DOSBox.
   If the target emulated system is PCjr (machine=pcjr) the boot command
-  can be used to load PCjr cartridges (.jrc). 
+  can be used to load PCjr cartridges (.jrc).
 
   BOOT [diskimg1.img diskimg2.img .. diskimgN.img] [-l driveletter]
   BOOT [cart.jrc]  (PCjr only)
@@ -991,7 +991,7 @@ For more information use the /? command line switch with the programs.
 ALT-ENTER     Switch to full screen and back.
 ALT-PAUSE     Pause emulation (hit ALT-PAUSE again to continue).
 CTRL-F1       Start the keymapper.
-CTRL-F4       Change between mounted floppy/CD images. Update directory cache 
+CTRL-F4       Change between mounted floppy/CD images. Update directory cache
               for all drives.
 CTRL-ALT-F5   Start/Stop creating a movie of the screen. (avi video capturing)
 CTRL-F5       Save a screenshot. (PNG format)
@@ -1006,7 +1006,7 @@ CTRL-F11      Slow down emulation (Decrease DOSBox Cycles).
 CTRL-F12      Speed up emulation (Increase DOSBox Cycles)*.
 ALT-F12       Unlock speed (turbo button/fast forward)**.
 F11, ALT-F11  (machine=cga) change tint in NTSC output modes***
-F11           (machine=hercules) cycle through amber, green, white colouring***
+F11           (machine=hercules) cycle through amber, green, white coloring***
 
 *NOTE: Once you increase your DOSBox cycles beyond your computer CPU resources,
        it will produce the same effect as slowing down the emulation.
@@ -1020,7 +1020,7 @@ F11           (machine=hercules) cycle through amber, green, white colouring***
          a different machine type. So either reassign them or reset the mapper.
 
 These are the default keybindings. They can be changed in the keymapper
-(see Section 7: KeyMapper). 
+(see Section 7: KeyMapper).
 
 In MAC OS you can try using cmd(applekey) together with Ctrl if the key doesn't
 work eg. cmd-ctrl-F1, but some keys may still need remapping (in Linux too).
@@ -1064,9 +1064,9 @@ You also have to configure controller properly inside the game.
 
 It is important to remember that if you saved the mapperfile without joystick
 
-connected, or with a different joystick setting, your new setting will 
+connected, or with a different joystick setting, your new setting will
 not work
-properly, 
+properly,
 or not work at all, until you reset DOSBox's mapperfile.
 
 
@@ -1080,7 +1080,7 @@ inside DOSBox, try different 'timed' setting in DOSBox's configuration file.
 =============
 
 You start the DOSBox mapper either with CTRL-F1 (see section 5. Special Keys)
-or -startmapper (see Section 3. Command Line Parameters). 
+or -startmapper (see Section 3. Command Line Parameters).
 You are presented with a virtual keyboard and a virtual joystick.
 
 These virtual devices correspond to the keys and events DOSBox will
@@ -1483,7 +1483,7 @@ See the THANKS file.
 17. Contact:
 ============
 
-See the site: 
+See the site:
 https://www.dosbox.com
 for an email address (The Crew-page).
 

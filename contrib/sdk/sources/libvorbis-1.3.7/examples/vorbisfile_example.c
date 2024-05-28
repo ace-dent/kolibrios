@@ -36,7 +36,7 @@ int main(){
   int eof=0;
   int current_section;
 
-#ifdef _WIN32 /* We need to set stdin/stdout to binary mode. Damn windows. */
+#ifdef _WIN32 /* We need to set stdin/stdout to binary mode. Darn windows. */
   /* Beware the evil ifdef. We avoid these where we can, but this one we
      cannot. Don't add any more, you'll probably go to hell if you do. */
   _setmode( _fileno( stdin ), _O_BINARY );

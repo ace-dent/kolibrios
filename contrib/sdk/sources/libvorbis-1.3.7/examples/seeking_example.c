@@ -94,7 +94,7 @@ int main(){
   int dummy;
   int hs=0;
 
-#ifdef _WIN32 /* We need to set stdin/stdout to binary mode. Damn windows. */
+#ifdef _WIN32 /* We need to set stdin/stdout to binary mode. Darn windows. */
   _setmode( _fileno( stdin ), _O_BINARY );
 #endif
 

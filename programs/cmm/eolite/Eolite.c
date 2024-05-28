@@ -386,7 +386,7 @@ void main()
 				break;
 			}
 
-			if (key_modifier&KEY_LSHIFT) || (key_modifier&KEY_RSHIFT) 
+			if (key_modifier&KEY_LSHIFT) || (key_modifier&KEY_RSHIFT)
 			{
 				if (key_scancode == SCAN_CODE_ENTER) {
 					EventOpenSelected();
@@ -458,7 +458,7 @@ void main()
 							break;
 				}
 				break;
-			} 
+			}
 
 			switch (calc(key_scancode))
 			{
@@ -512,7 +512,7 @@ void main()
 			if (CheckActiveProcess(Form.ID)) && (GetMenuClick()) break;
 			break;
 		default:
-			if (!Form.status_window&ROLLED_UP) 
+			if (!Form.status_window&ROLLED_UP)
 			&& (ESBYTE[path+1]!='f') && (ESBYTE[path+1]!='c') {
 				EventRefreshDisksAndFolders();
 			}
@@ -769,7 +769,7 @@ void List_ReDraw()
 	static int old_cur_y, old_first;
 	dword separator_color;
 
-	files.CheckDoesValuesOkey(); //prevent some shit
+	files.CheckDoesValuesOkey(); //prevent some issues
 	if (files.count < files.visible) files.visible = files.count;
 
 	if (list_full_redraw) || (old_first != files.first)
@@ -879,7 +879,7 @@ void Line_ReDraw(dword bgcol, signed filenum){
 	if (getElementSelectedFlag(filenum+files.first)) text_col=0xFF0000;
 	if (kfont.size.pt==9) || (!kfont.font)
 	{
-		// Show default font 
+		// Show default font
 		if (Form.width>=480)
 		{
 			FileShow.start_x = files.x + icon_size + 7;
@@ -892,7 +892,7 @@ void Line_ReDraw(dword bgcol, signed filenum){
 		}
 	} else {
 		// Show KFONT
-		//that shit must be in a library
+		//that mess must be in a library
 		strcpy(#label_file_name, file_name_off);
 		if (volume_label) sprintf(#label_file_name, "%s [%s]", file_name_off, #volume_label);
 		if (kfont.get_label_width(#label_file_name) + 141 + 26 > files.w)

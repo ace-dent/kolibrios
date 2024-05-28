@@ -133,7 +133,7 @@ novolumerampR:
 	jz volumerampend
 volumerampclamp:
 	cmp edi,eax
-	jbe volumerampend ; dont clamp mixcount
+	jbe volumerampend ; don't clamp mixcount
 	mov edi,eax
 volumerampend:
 	mov eax,[ecx+FSOUND_CHANNEL.ramp_leftspeed]
@@ -242,7 +242,7 @@ else
 	sbb edx,edx
 	; start again and continue rest of mix
 	test edi,edx
-	jnz CalculateLoopCount ; dont start again if nothing left
+	jnz CalculateLoopCount ; don't start again if nothing left
 	xor edx,edx
 endif
 DoOutputbuffEnd:

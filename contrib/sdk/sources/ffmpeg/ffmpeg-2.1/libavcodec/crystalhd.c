@@ -998,7 +998,7 @@ static int decode(AVCodecContext *avctx, void *data, int *got_frame, AVPacket *a
     /*
      * No frames ready. Don't try to extract.
      *
-     * Empirical testing shows that ReadyListCount can be a damn lie,
+     * Empirical testing shows that ReadyListCount can be a lie,
      * and ProcOut still fails when count > 0. The same testing showed
      * that two more iterations were needed before ProcOutput would
      * succeed.

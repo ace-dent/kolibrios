@@ -290,7 +290,7 @@ typedef struct _win       /* definition of a window */
     bool  _scroll;        /* allows window scrolling */
     bool  _nodelay;       /* input character wait flag */
     bool  _immed;         /* immediate update flag */
-    bool  _sync;          /* synchronise window ancestors */
+    bool  _sync;          /* synchronize window ancestors */
     bool  _use_keypad;    /* flags keypad key mode active */
     chtype **_y;          /* pointer to line pointer array */
     int   *_firstch;      /* first changed character in line */

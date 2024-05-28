@@ -243,7 +243,7 @@ ppc64_encode_local_entry(unsigned int val)
 #define DT_PPC64_OPD		(DT_LOPROC + 1)
 #define DT_PPC64_OPDSZ		(DT_LOPROC + 2)
 
-/* Specify whether various optimisations are possible.  */
+/* Specify whether various optimizations are possible.  */
 #define DT_PPC64_OPT		(DT_LOPROC + 3)
 #define PPC64_OPT_TLS		1
 #define PPC64_OPT_MULTI_TOC	2

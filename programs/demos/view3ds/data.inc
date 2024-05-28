@@ -536,7 +536,7 @@ align 8
         scale   dd      ? ; help scale variable
 
         points_count_var        dd ?  ;
-        triangles_count_var     dd ?  ; dont change order
+        triangles_count_var     dd ?  ; don't change order
         edges_count             dd ?  ;
         chunks_number           dd ?
         tex_points_ptr          dd ?

@@ -4421,7 +4421,7 @@ static int drm_property_replace_global_blob(struct drm_device *dev,
 			return PTR_ERR(new_blob);
 	}
 
-	/* This does not need to be synchronised with blob_lock, as the
+	/* This does not need to be synchronized with blob_lock, as the
 	 * get_properties ioctl locks all modesetting objects, and
 	 * obj_holds_id must be locked before calling here, so we cannot
 	 * have its value out of sync with the list membership modified

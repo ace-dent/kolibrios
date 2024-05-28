@@ -144,7 +144,7 @@ int get_whois_data(char* domain, char** data)
 */
     if (wch) {
         // Now we have the registrar whois server , this has the direct full information of the particular domain
-        // so lets query again
+        // so let's query again
 
         fprintf(out, "\nRegistrar Whois server is : %s", wch);
 
@@ -234,7 +234,7 @@ int hostname_to_ip(char* hostname, char* ip)
     sprintf(port_str, "%d", 80);
     struct addrinfo hints;
     memset(&hints, 0, sizeof(hints));
-    hints.ai_family = AF_UNSPEC;     // IPv4 or IPv6 doesnt matter
+    hints.ai_family = AF_UNSPEC;     // IPv4 or IPv6 doesn't matter
     hints.ai_socktype = SOCK_STREAM; // TCP stream sockets
     if (getaddrinfo(hostname, port_str, 0, &addr_info) != 0) {
         freeaddrinfo(addr_info);

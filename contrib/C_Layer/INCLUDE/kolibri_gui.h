@@ -55,7 +55,7 @@ void kolibri_handle_event_redraw(kolibri_window* some_window)
 	    case KOLIBRI_CHECK_BOX:
 	      __asm__ volatile("push $0x13371337"::); / * Random value pushed to balance stack * /
 						      / * otherwise edit_box_draw leaves stack unbalanced * /
-						      / * and GCC jumps like a crazy motha' fucka' * /
+						      / * and GCC jumps crazily * /
 
 	      break;
 	    }

@@ -704,7 +704,7 @@ end if
         jl        @f
         mov       .x2,dx
     @@:
-; calc line addres begin in screen and Z buffer
+; calc line address begin in screen and Z buffer
         movsx     eax,word .y
         mul       edx
         movsx     edx,.x1

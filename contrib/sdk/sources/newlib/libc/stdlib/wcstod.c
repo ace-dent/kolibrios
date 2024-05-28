@@ -73,7 +73,7 @@ DESCRIPTION
 	round-even rule.  However, <<wcstof>> is currently subject to
 	double rounding errors.
 
-	The alternate functions <<_wcstod_r>> and <<_wcstof_r>> are 
+	The alternate functions <<_wcstod_r>> and <<_wcstof_r>> are
 	reentrant versions of <<wcstod>> and <<wcstof>>, respectively.
 	The extra argument <[reent]> is a pointer to a reentrancy structure.
 
@@ -145,7 +145,7 @@ _DEFUN (_wcstod_r, (ptr, nptr, endptr),
          *
          * We could attempt to find the end of the numeric portion of the
          * wide char. string to avoid converting unneeded characters but
-         * choose not to bother; optimising the uncommon case where
+         * choose not to bother; optimizing the uncommon case where
          * the input string contains a lot of text after the number
          * duplicates a lot of strtod()'s functionality and slows down the
          * most common cases.

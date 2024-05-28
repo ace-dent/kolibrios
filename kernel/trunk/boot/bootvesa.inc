@@ -226,7 +226,7 @@ calc_vmodes_table:
         cmp     [es:mi.GreenMaskSize], 5
         jne     .l0
 ;        mov     [es:mi.BitsPerPixel],15
-        jmp     @f                         ; 15 bpp isnt supported ATM
+        jmp     @f                         ; 15 bpp is not supported ATM
 
 
 .l0:

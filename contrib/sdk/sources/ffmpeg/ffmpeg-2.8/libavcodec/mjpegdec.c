@@ -1109,7 +1109,7 @@ static int ljpeg_decode_yuv_scan(MJpegDecodeContext *s, int predictor,
                             || v * mb_y + y >= s->height) {
                             // Nothing to do
                         } else if (bits<=8) {
-                        ptr = s->picture_ptr->data[c] + (linesize * (v * mb_y + y)) + (h * mb_x + x); //FIXME optimize this crap
+                        ptr = s->picture_ptr->data[c] + (linesize * (v * mb_y + y)) + (h * mb_x + x); //FIXME optimize this junk
                         if(y==0 && toprow){
                             if(x==0 && leftcol){
                                 pred= 1 << (bits - 1);
@@ -1129,7 +1129,7 @@ static int ljpeg_decode_yuv_scan(MJpegDecodeContext *s, int predictor,
                         pred &= mask;
                         *ptr= pred + (dc << point_transform);
                         }else{
-                            ptr16 = (uint16_t*)(s->picture_ptr->data[c] + 2*(linesize * (v * mb_y + y)) + 2*(h * mb_x + x)); //FIXME optimize this crap
+                            ptr16 = (uint16_t*)(s->picture_ptr->data[c] + 2*(linesize * (v * mb_y + y)) + 2*(h * mb_x + x)); //FIXME optimize this junk
                             if(y==0 && toprow){
                                 if(x==0 && leftcol){
                                     pred= 1 << (bits - 1);
@@ -1182,13 +1182,13 @@ static int ljpeg_decode_yuv_scan(MJpegDecodeContext *s, int predictor,
                         } else if (bits<=8) {
                             ptr = s->picture_ptr->data[c] +
                               (linesize * (v * mb_y + y)) +
-                              (h * mb_x + x); //FIXME optimize this crap
+                              (h * mb_x + x); //FIXME optimize this junk
                             PREDICT(pred, ptr[-linesize-1], ptr[-linesize], ptr[-1], predictor);
 
                             pred &= mask;
                             *ptr = pred + (dc << point_transform);
                         }else{
-                            ptr16 = (uint16_t*)(s->picture_ptr->data[c] + 2*(linesize * (v * mb_y + y)) + 2*(h * mb_x + x)); //FIXME optimize this crap
+                            ptr16 = (uint16_t*)(s->picture_ptr->data[c] + 2*(linesize * (v * mb_y + y)) + 2*(h * mb_x + x)); //FIXME optimize this junk
                             PREDICT(pred, ptr16[-linesize-1], ptr16[-linesize], ptr16[-1], predictor);
 
                             pred &= mask;

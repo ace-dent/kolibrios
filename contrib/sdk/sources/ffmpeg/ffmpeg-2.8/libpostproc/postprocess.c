@@ -67,7 +67,7 @@ make the mainloop more flexible (variable number of blocks at once
 compare the quality & speed of all filters
 split this huge file
 optimize c versions
-try to unroll inner for(x=0 ... loop to avoid these damn if(x ... checks
+try to unroll inner for(x=0 ... loop to avoid these if(x ... checks
 ...
 */
 

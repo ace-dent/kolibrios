@@ -267,7 +267,7 @@ static av_always_inline void hyscale(SwsContext *c, int16_t *dst, int dstWidth,
     if (!c->hyscale_fast) {
         c->hyScale(c, dst, dstWidth, src, hLumFilter,
                    hLumFilterPos, hLumFilterSize);
-    } else { // fast bilinear upscale / crap downscale
+    } else { // fast bilinear upscale / junk downscale
         c->hyscale_fast(c, dst, dstWidth, src, srcW, xInc);
     }
 

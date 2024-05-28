@@ -145,7 +145,7 @@ static int rm_read_audio_stream_info(AVFormatContext *s, AVIOContext *pb,
             avio_r8(pb);
             get_str8(pb, buf, sizeof(buf));
         }
-        // Skip extra header crap (this should never happen)
+        // Skip extra header junk (this should never happen)
         if ((startpos + header_size) > avio_tell(pb))
             avio_skip(pb, header_size + startpos - avio_tell(pb));
         if (bytes_per_minute)

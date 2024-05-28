@@ -3518,7 +3518,7 @@ _cairo_pattern_get_extents (const cairo_pattern_t         *pattern,
 	    double r1, r2;
 
 	    if (_radial_pattern_is_degenerate (radial)) {
-		/* cairo-gstate should have optimised degenerate
+		/* cairo-gstate should have optimized degenerate
 		 * patterns to solid clear patterns, so we can ignore
 		 * them here. */
 		goto EMPTY;
@@ -3553,7 +3553,7 @@ _cairo_pattern_get_extents (const cairo_pattern_t         *pattern,
 		goto UNBOUNDED;
 
 	    if (_linear_pattern_is_degenerate (linear)) {
-		/* cairo-gstate should have optimised degenerate
+		/* cairo-gstate should have optimized degenerate
 		 * patterns to solid ones, so we can again ignore
 		 * them here. */
 		goto EMPTY;

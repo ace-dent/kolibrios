@@ -264,7 +264,7 @@ static av_always_inline void hyscale(SwsContext *c, int16_t *dst, int dstWidth,
     if (!c->hyscale_fast) {
         c->hyScale(c, dst, dstWidth, src, hLumFilter,
                    hLumFilterPos, hLumFilterSize);
-    } else { // fast bilinear upscale / crap downscale
+    } else { // fast bilinear upscale / junk downscale
         c->hyscale_fast(c, dst, dstWidth, src, srcW, xInc);
     }
 
@@ -318,7 +318,7 @@ static av_always_inline void hcscale(SwsContext *c, int16_t *dst1,
     if (!c->hcscale_fast) {
         c->hcScale(c, dst1, dstWidth, src1, hChrFilter, hChrFilterPos, hChrFilterSize);
         c->hcScale(c, dst2, dstWidth, src2, hChrFilter, hChrFilterPos, hChrFilterSize);
-    } else { // fast bilinear upscale / crap downscale
+    } else { // fast bilinear upscale / junk downscale
         c->hcscale_fast(c, dst1, dst2, dstWidth, src1, src2, srcW, xInc);
     }
 

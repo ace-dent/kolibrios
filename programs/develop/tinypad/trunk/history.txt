@@ -162,7 +162,7 @@ HISTORY:
   rewrote save_file from scratch; bugfix in loadfile;
 
 3.74
-  optimisation
+  optimization
 
 3.73
   completly new load_file function

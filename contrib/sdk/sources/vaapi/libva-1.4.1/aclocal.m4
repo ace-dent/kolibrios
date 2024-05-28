@@ -2337,7 +2337,7 @@ fi
 # Invoke $ECHO with all args, space-separated.
 func_echo_all ()
 {
-    $ECHO "$*" 
+    $ECHO "$*"
 }
 
 case "$ECHO" in
@@ -2819,7 +2819,7 @@ AC_CACHE_VAL([lt_cv_sys_max_cmd_len], [dnl
   osf*)
     # Dr. Hans Ekkehard Plesser reports seeing a kernel panic running configure
     # due to this test when exec_disable_arg_limit is 1 on Tru64. It is not
-    # nice to cause kernel panics so lets avoid the loop below.
+    # nice to cause kernel panics so let's avoid the loop below.
     # First set a reasonable default.
     lt_cv_sys_max_cmd_len=16384
     #
@@ -9677,7 +9677,7 @@ _LT_DECL(, macro_revision, 0)
 # included after everything else.  This provides aclocal with the
 # AC_DEFUNs it wants, but when m4 processes it, it doesn't do anything
 # because those macros already exist, or will be overwritten later.
-# We use AC_DEFUN over AU_DEFUN for compatibility with aclocal-1.6. 
+# We use AC_DEFUN over AU_DEFUN for compatibility with aclocal-1.6.
 #
 # Anytime we withdraw an AC_DEFUN or AU_DEFUN, remember to add it here.
 # Yes, that means every name once taken will need to remain here until
@@ -9751,7 +9751,7 @@ m4_ifndef([_LT_PROG_CXX],		[AC_DEFUN([_LT_PROG_CXX])])
 
 # pkg.m4 - Macros to locate and utilise pkg-config.            -*- Autoconf -*-
 # serial 1 (pkg-config-0.24)
-# 
+#
 # Copyright © 2004 Scott James Remnant <scott@netsplit.com>.
 #
 # This program is free software; you can redistribute it and/or modify
@@ -9874,7 +9874,7 @@ if test $pkg_failed = yes; then
         _PKG_SHORT_ERRORS_SUPPORTED
         if test $_pkg_short_errors_supported = yes; then
 	        $1[]_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "$2" 2>&1`
-        else 
+        else
 	        $1[]_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "$2" 2>&1`
         fi
 	# Put the nasty error message in config.log where it belongs

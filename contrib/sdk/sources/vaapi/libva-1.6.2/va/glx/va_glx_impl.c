@@ -8,11 +8,11 @@
  * distribute, sub license, and/or sell copies of the Software, and to
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice (including the
  * next paragraph) shall be included in all copies or substantial portions
  * of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
  * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.
@@ -332,7 +332,7 @@ gl_create_context(VADriverContextP ctx, OpenGLContextStateP parent)
         GLX_RENDER_TYPE,   GLX_RGBA_BIT,
         GLX_DOUBLEBUFFER,  True,
         GLX_RED_SIZE,      8,
-        GLX_GREEN_SIZE,    8, 
+        GLX_GREEN_SIZE,    8,
         GLX_BLUE_SIZE,     8,
         None
     };
@@ -909,7 +909,7 @@ error:
     if (new_cs)
         gl_destroy_context(new_cs);
 
-    return VA_STATUS_ERROR_ALLOCATION_FAILED;    
+    return VA_STATUS_ERROR_ALLOCATION_FAILED;
 }
 
 static VAStatus
@@ -951,7 +951,7 @@ associate_surface(
 {
     VAStatus status;
 
-    /* XXX: optimise case where we are associating the same VA surface
+    /* XXX: optimize case where we are associating the same VA surface
        as before an no changed occurred to it */
     status = deassociate_surface(ctx, pSurfaceGLX);
     if (status != VA_STATUS_SUCCESS)

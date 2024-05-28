@@ -79,7 +79,7 @@ extern int roomSecret;
 
 extern int collisionTiles[16][12];
 
-//Playtime in frames. At 60 frames per second can hold ~828 1/2 days worth of playtime if my math isn't shit
+//Playtime in frames. At 60 frames per second can hold ~828 1/2 days worth of playtime
 extern unsigned long playTime;
 
 //Inventory

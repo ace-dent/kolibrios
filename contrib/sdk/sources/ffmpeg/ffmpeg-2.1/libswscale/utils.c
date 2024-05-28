@@ -1500,7 +1500,7 @@ av_cold int sws_init_context(SwsContext *c, SwsFilter *srcFilter,
 #endif
     }
 
-    // calculate buffer sizes so that they won't run out while handling these damn slices
+    // calculate buffer sizes so that they won't run out while handling these slices
     c->vLumBufSize = c->vLumFilterSize;
     c->vChrBufSize = c->vChrFilterSize;
     for (i = 0; i < dstH; i++) {

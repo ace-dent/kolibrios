@@ -121,7 +121,7 @@ void mbedtls_ccm_free( mbedtls_ccm_context *ctx )
 
 /*
  * Update the CBC-MAC state in y using a block in b
- * (Always using b as the source helps the compiler optimise a bit better.)
+ * (Always using b as the source helps the compiler optimize a bit better.)
  */
 #define UPDATE_CBC_MAC                                                      \
     for( i = 0; i < 16; i++ )                                               \

@@ -136,7 +136,7 @@ int main()
             kolibri_handle_event_key(main_window, keypress);
 
             if(keypress.code == SCAN_CODE_ALTM && get_os_keyb_modifiers() & (KEY_LALT | KEY_RALT))
-                (*menu_bar_activate)(menu1); // wont work, immediately redraw command closes menu (  . but Alt+F1 worked in opendial.asm:463
+                (*menu_bar_activate)(menu1); // won't work, immediately redraw command closes menu (  . but Alt+F1 worked in opendial.asm:463
 
 			break;
         case KOLIBRI_EVENT_BUTTON:

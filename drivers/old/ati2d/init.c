@@ -542,7 +542,7 @@ static void RADEONInitMemoryMap(RHDPtr info)
     else {
         info->fbLocation = (info->mc_fb_location & 0xffff) << 16;
     }
-    /* Just disable the damn AGP apertures for now, it may be
+    /* Just disable the AGP apertures for now, it may be
      * re-enabled later by the DRM
      */
 

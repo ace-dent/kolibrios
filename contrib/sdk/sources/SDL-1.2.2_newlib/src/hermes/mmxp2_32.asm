@@ -1,27 +1,27 @@
 ;
-; pII-optimised MMX format converters for HERMES
+; pII-optimized MMX format converters for HERMES
 ; Copyright (c) 1998 Christian Nentwich (c.nentwich@cs.ucl.ac.uk)
 ;   and (c) 1999 Jonathan Matthew (jmatthew@uq.net.au)
 ; This source code is licensed under the GNU LGPL
-; 
+;
 ; Please refer to the file COPYING.LIB contained in the distribution for
-; licensing conditions		
+; licensing conditions
 ;
 ; COPYRIGHT NOTICE
-; 
+;
 ; This file partly contains code that is (c) Intel Corporation, specifically
 ; the mode detection routine, and the converter to 15 bit (8 pixel
 ; conversion routine from the mmx programming tutorial pages).
 ;
 ;
-; These routines aren't exactly pII optimised - it's just that as they
+; These routines aren't exactly pII optimized - it's just that as they
 ; are, they're terrible on p5 MMXs, but less so on pIIs.  Someone needs to
-; optimise them for p5 MMXs..
+; optimize them for p5 MMXs..
 
 BITS 32
 
 %include "common.inc"
-	
+
 SDL_FUNC _ConvertMMXpII32_24RGB888
 SDL_FUNC _ConvertMMXpII32_16RGB565
 SDL_FUNC _ConvertMMXpII32_16BGR565
@@ -198,7 +198,7 @@ _ConvertMMXpII32_16RGB565:
 .L4:
 	retn
 
-ConvertMMXpII32_16BGR565:	
+ConvertMMXpII32_16BGR565:
 _ConvertMMXpII32_16BGR565:
 
         load_immq mm5, mmx32_rgb565_r
@@ -291,15 +291,15 @@ _ConvertMMXpII32_16RGB555:
 _convert_bgr555_cheat:
 	load_immq mm6, mmx32_rgb555_g
 	CLEANUP_IMMQ_LOADS(2)
-        
-	mov edx,ecx		           ; Save ecx 
+
+	mov edx,ecx		           ; Save ecx
 
         and ecx,DWORD 0fffffff8h            ; clear lower three bits
 	jnz .L_OK
-        jmp near .L2 
+        jmp near .L2
 
 .L_OK:
-	
+
 	movq mm2,[esi+8]
 
 	movq mm0,[esi]
@@ -338,7 +338,7 @@ _convert_bgr555_cheat:
 	pand_immq mm3, mmx32_rgb555_rb
 	pand mm4,mm6
 
-	movq [edi],mm1			
+	movq [edi],mm1
 	pmaddwd mm3,mm7
 
         add esi,BYTE 32
@@ -369,22 +369,22 @@ _convert_bgr555_cheat:
 
 	pmaddwd mm1,mm7
         add edi,BYTE 16
-	
+
         sub ecx,BYTE 8
 	jz .L2
         jmp .L1
 
 
-.L2:	
+.L2:
 	mov ecx,edx
-	
+
         and ecx,BYTE 7
 	jz .L4
-	
-.L3:	
+
+.L3:
 	mov ebx,[esi]
         add esi,BYTE 4
-	
+
         mov eax,ebx
         mov edx,ebx
 
@@ -406,9 +406,9 @@ _convert_bgr555_cheat:
         add edi,BYTE 2
 
 	dec ecx
-	jnz .L3	
+	jnz .L3
 
-.L4:		
+.L4:
 	retn
 
 %ifidn __OUTPUT_FORMAT__,elf32

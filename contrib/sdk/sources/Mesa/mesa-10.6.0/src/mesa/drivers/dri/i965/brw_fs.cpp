@@ -2658,7 +2658,7 @@ fs_visitor::opt_sampler_eot()
    if (unlikely(tex_inst->is_head_sentinel()) || !tex_inst->is_tex())
       return false;
 
-   /* This optimisation doesn't seem to work for textureGather for some
+   /* This optimization doesn't seem to work for textureGather for some
     * reason. I can't find any documentation or known workarounds to indicate
     * that this is expected, but considering that it is probably pretty
     * unlikely that a shader would directly write out the results from

@@ -591,7 +591,7 @@ st_context_teximage(struct st_context_iface *stctxi,
 
    _mesa_dirty_texobj(ctx, texObj);
    _mesa_unlock_texture(ctx, texObj);
-   
+
    return TRUE;
 }
 
@@ -728,7 +728,7 @@ st_framebuffer_reuse_or_create(struct st_context *st,
 {
    struct st_framebuffer *cur = st_ws_framebuffer(fb), *stfb = NULL;
 
-   /* dummy framebuffers cant be used as st_framebuffer */
+   /* dummy framebuffers can't be used as st_framebuffer */
    if (cur && &cur->Base != _mesa_get_incomplete_framebuffer() &&
        cur->iface == stfbi) {
       /* reuse the current stfb */

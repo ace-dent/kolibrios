@@ -1,7 +1,7 @@
 /*
 
  * Z buffer: 16 bits Z / 16 bits color
- * 
+ *
  */
 #include <stdlib.h>
 #include <stdio.h>
@@ -189,7 +189,7 @@ static void ZB_copyFrameBufferRGB32(ZBuffer * zb,
 /* order: RGBR GBRG BRGB */
 
 /* XXX: packed pixel 24 bit support not tested */
-/* XXX: big endian case not optimised */
+/* XXX: big endian case not optimized */
 
 #if BYTE_ORDER == BIG_ENDIAN
 
@@ -299,8 +299,8 @@ void ZB_copyFrameBuffer(ZBuffer * zb, void *buf,
   ((((r) >> 3) << 11) | (((g) >> 2) << 5) | ((b) >> 3))
 
 /* XXX: not optimized */
-static void ZB_copyFrameBuffer5R6G5B(ZBuffer * zb, 
-                                     void *buf, int linesize) 
+static void ZB_copyFrameBuffer5R6G5B(ZBuffer * zb,
+                                     void *buf, int linesize)
 {
     PIXEL *q;
     unsigned short *p, *p1;
@@ -351,8 +351,8 @@ void ZB_copyFrameBuffer(ZBuffer * zb, void *buf,
   (((v >> 8) & 0xf800) | (((v) >> 5) & 0x07e0) | (((v) & 0xff) >> 3))
 
 /* XXX: not optimized */
-static void ZB_copyFrameBuffer5R6G5B(ZBuffer * zb, 
-                                     void *buf, int linesize) 
+static void ZB_copyFrameBuffer5R6G5B(ZBuffer * zb,
+                                     void *buf, int linesize)
 {
     PIXEL *q;
     unsigned short *p, *p1;
@@ -498,7 +498,7 @@ void ZB_clear(ZBuffer * zb, int clear_z, int z,
 #elif TGL_FEATURE_RENDER_BITS == 32
             color = RGB_TO_PIXEL(r, g, b);
 	    memset_l(pp, color, zb->xsize);
-#elif TGL_FEATURE_RENDER_BITS == 24 
+#elif TGL_FEATURE_RENDER_BITS == 24
             memset_RGB24(pp,r>>8,g>>8,b>>8,zb->xsize);
 #else
 #error TODO

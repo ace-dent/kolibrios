@@ -202,7 +202,7 @@ int SDL_VideoInit (const char *driver_name, Uint32 flags)
 	video->gl_config.accum_green_size = 0;
 	video->gl_config.accum_blue_size = 0;
 	video->gl_config.accum_alpha_size = 0;
-	
+
 	/* Initialize the video subsystem */
 	memset(&vformat, 0, sizeof(vformat));
 	if ( video->VideoInit(video, &vformat) < 0 ) {
@@ -234,7 +234,7 @@ int SDL_VideoInit (const char *driver_name, Uint32 flags)
 	}
 #endif
 	video->info.vfmt = SDL_VideoSurface->format;
-	
+
 	ksys_pos_t screen_s = _ksys_screen_size();
 	video->info.current_h = screen_s.y;
 	video->info.current_w = screen_s.x;
@@ -330,7 +330,7 @@ static Uint8 SDL_closest_depths[4][8] = {
 	{ 0, 32, 16, 15, 24, 8, 0, 0 }
 };
 
-int SDL_VideoModeOK (int width, int height, int bpp, Uint32 flags) 
+int SDL_VideoModeOK (int width, int height, int bpp, Uint32 flags)
 {
 	int table, b, i;
 	int supported;
@@ -357,7 +357,7 @@ int SDL_VideoModeOK (int width, int height, int bpp, Uint32 flags)
 		if ( sizes == (SDL_Rect **)0 ) {
 			/* No sizes supported at this bit-depth */
 			continue;
-		} else 
+		} else
 #ifdef macintosh /* MPW optimization bug? */
 		if ( (sizes == (SDL_Rect **)0xFFFFFFFF) ||
 #else
@@ -699,7 +699,7 @@ do { \
 	} \
 } while ( 0 );
 #include "SDL_glfuncs.h"
-#undef SDL_PROC	
+#undef SDL_PROC
 
 		/* Create a software surface for blitting */
 #ifdef GL_VERSION_1_2
@@ -715,9 +715,9 @@ do { \
 		{
 			video->is_32bit = 0;
 			SDL_VideoSurface = SDL_CreateRGBSurface(
-				flags, 
-				width, 
-				height,  
+				flags,
+				width,
+				height,
 				16,
 				31 << 11,
 				63 << 5,
@@ -730,10 +730,10 @@ do { \
 		{
 			video->is_32bit = 1;
 			SDL_VideoSurface = SDL_CreateRGBSurface(
-				flags, 
-				width, 
-				height, 
-				32, 
+				flags,
+				width,
+				height,
+				32,
 #if SDL_BYTEORDER == SDL_LIL_ENDIAN
 				0x000000FF,
 				0x0000FF00,
@@ -791,7 +791,7 @@ do { \
 	     (
 	     (  !(flags&SDL_ANYFORMAT) &&
 			(SDL_VideoSurface->format->BitsPerPixel != bpp)) ||
-	     (   (flags&SDL_HWPALETTE) && 
+	     (   (flags&SDL_HWPALETTE) &&
 				!(SDL_VideoSurface->flags&SDL_HWPALETTE)) ||
 		/* If the surface is in hardware, video writes are visible
 		   as soon as they are performed, so we need to buffer them
@@ -814,7 +814,7 @@ do { \
 	return(SDL_PublicSurface);
 }
 
-/* 
+/*
  * Convert a surface into the video pixel format.
  */
 SDL_Surface * SDL_DisplayFormat (SDL_Surface *surface)
@@ -881,8 +881,8 @@ SDL_Surface *SDL_DisplayFormatAlpha(SDL_Surface *surface)
 		break;
 
 	    default:
-		/* We have no other optimised formats right now. When/if a new
-		   optimised alpha format is written, add the converter here */
+		/* We have no other optimized formats right now. When/if a new
+		   optimized alpha format is written, add the converter here */
 		break;
 	}
 	format = SDL_AllocFormat(32, rmask, gmask, bmask, amask);
@@ -944,14 +944,14 @@ void SDL_UpdateRects (SDL_Surface *screen, int numrects, SDL_Rect *rects)
 			SDL_LockCursor();
 			SDL_DrawCursor(SDL_ShadowSurface);
 			for ( i=0; i<numrects; ++i ) {
-				SDL_LowerBlit(SDL_ShadowSurface, &rects[i], 
+				SDL_LowerBlit(SDL_ShadowSurface, &rects[i],
 						SDL_VideoSurface, &rects[i]);
 			}
 			SDL_EraseCursor(SDL_ShadowSurface);
 			SDL_UnlockCursor();
 		} else {
 			for ( i=0; i<numrects; ++i ) {
-				SDL_LowerBlit(SDL_ShadowSurface, &rects[i], 
+				SDL_LowerBlit(SDL_ShadowSurface, &rects[i],
 						SDL_VideoSurface, &rects[i]);
 			}
 		}
@@ -1417,42 +1417,42 @@ void SDL_GL_UpdateRects(int numrects, SDL_Rect *rects)
 
 				if ( update.h > 256 )
 					update.h = 256;
-			
+
 				this->glFlush();
-				this->glTexSubImage2D( 
-					GL_TEXTURE_2D, 
-					0, 
-					0, 
-					0, 
-					update.w, 
-					update.h, 
+				this->glTexSubImage2D(
+					GL_TEXTURE_2D,
+					0,
+					0,
+					0,
+					update.w,
+					update.h,
 					this->is_32bit? GL_RGBA : GL_RGB,
 #ifdef GL_VERSION_1_2
 					this->is_32bit ? GL_UNSIGNED_BYTE : GL_UNSIGNED_SHORT_5_6_5,
 #else
 					GL_UNSIGNED_BYTE,
 #endif
-					(Uint8 *)this->screen->pixels + 
-						this->screen->format->BytesPerPixel * update.x + 
+					(Uint8 *)this->screen->pixels +
+						this->screen->format->BytesPerPixel * update.x +
 						update.y * this->screen->pitch );
-	
+
 				this->glFlush();
 				/*
 				* Note the parens around the function name:
-				* This is because some OpenGL implementations define glTexCoord etc 
+				* This is because some OpenGL implementations define glTexCoord etc
 				* as macros, and we don't want them expanded here.
 				*/
 				this->glBegin(GL_TRIANGLE_STRIP);
-					(this->glTexCoord2f)( 0.0, 0.0 );	
+					(this->glTexCoord2f)( 0.0, 0.0 );
 					(this->glVertex2i)( update.x, update.y );
-					(this->glTexCoord2f)( (float)(update.w / 256.0), 0.0 );	
+					(this->glTexCoord2f)( (float)(update.w / 256.0), 0.0 );
 					(this->glVertex2i)( update.x + update.w, update.y );
 					(this->glTexCoord2f)( 0.0, (float)(update.h / 256.0) );
 					(this->glVertex2i)( update.x, update.y + update.h );
-					(this->glTexCoord2f)( (float)(update.w / 256.0), (float)(update.h / 256.0) );	
+					(this->glTexCoord2f)( (float)(update.w / 256.0), (float)(update.h / 256.0) );
 					(this->glVertex2i)( update.x + update.w	, update.y + update.h );
-				this->glEnd();	
-			
+				this->glEnd();
+
 				tmp.x += 256;
 				tmp.w -= 256;
 			}
@@ -1480,7 +1480,7 @@ void SDL_GL_Lock()
 		this->glDisable(GL_FOG);
 		this->glDisable(GL_ALPHA_TEST);
 		this->glDisable(GL_DEPTH_TEST);
-		this->glDisable(GL_SCISSOR_TEST);	
+		this->glDisable(GL_SCISSOR_TEST);
 		this->glDisable(GL_STENCIL_TEST);
 		this->glDisable(GL_CULL_FACE);
 

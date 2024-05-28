@@ -578,7 +578,7 @@ static inline void qpel_motion(MpegEncContext *s,
             ptr_cb += s->uvlinesize;
             ptr_cr += s->uvlinesize;
         }
-        // damn interlaced mode
+        // darn interlaced mode
         // FIXME boundary mirroring is not exactly correct here
         qpix_op[1][dxy](dest_y, ptr_y, linesize);
         qpix_op[1][dxy](dest_y + 8, ptr_y + 8, linesize);

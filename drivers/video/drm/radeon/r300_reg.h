@@ -345,7 +345,7 @@
  * position takes place.
  *
  * Most likely this is used to ignore rest of the program in cases
- * where group of verts arent visible. For some reason this "section"
+ * where group of verts aren't visible. For some reason this "section"
  * is sometimes accepted other instruction that have no relationship with
  * position calculations.
  */

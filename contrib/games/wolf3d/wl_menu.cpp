@@ -2429,7 +2429,7 @@ EnterCtrlData (int index, CustomCtrls * cust, void (*DrawRtn) (int), void (*Prin
 
 ////////////////////////
 //
-// FIXUP GUN CURSOR OVERDRAW SHIT
+// FIXUP GUN CURSOR OVERDRAW MESS
 //
 void
 FixupCustom (int w)
@@ -3484,7 +3484,7 @@ DrawHalfStep (int x, int y)
     VWB_DrawPic (x, y, C_CURSOR1PIC);
     VW_UpdateScreen ();
     SD_PlaySound (MOVEGUN1SND);
-    SDL_Delay(1);  //Fixed too long delay in the menu 
+    SDL_Delay(1);  //Fixed too long delay in the menu
 }
 
 
@@ -3996,7 +3996,7 @@ CheckForEpisodes (void)
     {
     #ifdef _KOLIBRI
         strcpy(configdir, "/tmp0/1/wolf4sdl");
-    #else    
+    #else
         // Set config location to home directory for multi-user support
         char *homedir = getenv("HOME");
         if(homedir == NULL)

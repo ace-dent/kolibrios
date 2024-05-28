@@ -622,7 +622,7 @@ void JE_itemScreen( void )
 			JE_barDrawShadow(VGAScreen, 104, 152, 2, 14, shields[player[0].items.shield].mpwr * 2, 2, 13);
 		}
 
-		/* Draw crap on the left side of the screen, i.e. two player scores, ship graphic, etc. */
+		/* Draw stuff on the left side of the screen, i.e. two player scores, ship graphic, etc. */
 		if (((curMenu >= 0 && curMenu <= 2) || curMenu == 5 || curMenu == 6 || curMenu >= 9) || (curMenu == 4 && (curSel[1] == 2 || curSel[1] == 5)))
 		{
 			if (twoPlayerMode)
@@ -2336,7 +2336,7 @@ void JE_drawMainMenuHelpText( void )
 	{
 		memcpy(tempStr, mainMenuHelp[17 + curMenu - 3], sizeof(tempStr));
 	}
-	
+
 	JE_textShade(VGAScreen, 10, 187, tempStr, 14, 1, DARKEN);
 }
 
@@ -2691,7 +2691,7 @@ void JE_menuFunction( JE_byte select )
 
 				wait_delay();
 			} while (!newkey && !mousedown && !joydown);
-			
+
 			if (newkey)
 			{
 				// already used? then swap
@@ -2703,7 +2703,7 @@ void JE_menuFunction( JE_byte select )
 						break;
 					}
 				}
-				
+
 				if (lastkey_sym != SDLK_ESCAPE && // reserved for menu
 				    lastkey_sym != SDLK_F11 &&    // reserved for gamma
 				    lastkey_sym != SDLK_p)        // reserved for pause
@@ -2712,7 +2712,7 @@ void JE_menuFunction( JE_byte select )
 					keySettings[curSelect-2] = lastkey_sym;
 					++curSelect;
 				}
-				
+
 				JE_wipeKey();
 			}
 		}

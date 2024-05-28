@@ -1563,7 +1563,7 @@ intel_dp_compute_config(struct intel_encoder *encoder,
 	bpp = pipe_config->pipe_bpp;
 	if (is_edp(intel_dp)) {
 
-		/* Get bpp from vbt only for panels that dont have bpp in edid */
+		/* Get bpp from vbt only for panels that don't have bpp in edid */
 		if (intel_connector->base.display_info.bpc == 0 &&
 			(dev_priv->vbt.edp_bpp && dev_priv->vbt.edp_bpp < bpp)) {
 			DRM_DEBUG_KMS("clamping bpp for eDP panel to BIOS-provided %i\n",

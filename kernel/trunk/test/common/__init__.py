@@ -86,7 +86,7 @@ class Qemu:
 
     def kill(self):
         if is_win32():
-            # FIXME: This is shit, isn't there anything better?
+            # FIXME: This is a mess. Isn't there anything better?
             subprocess.Popen(f"TASKKILL /F /PID {self.popen.pid} /T", stdout = subprocess.DEVNULL, stderr = subprocess.DEVNULL, stdin = subprocess.DEVNULL)
         else:
             os.killpg(os.getpgid(self.popen.pid), signal.SIGTERM)

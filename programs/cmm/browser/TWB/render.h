@@ -23,7 +23,7 @@ void TWebBrowser::RenderLine(dword _line)
 		pw = strlen(_line) * list.font_w;
 		zoom = list.font_w / BASIC_CHAR_W;
 
-		//there is some shit happens!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		//there is some mess happens!!
 		if (pw > draw_w) {
 			//draw_w = pw;
 			NewLine();
@@ -59,7 +59,7 @@ void TWebBrowser::RenderLine(dword _line)
 		if (link) {
 			if (ESBYTE[_line]==' ') && (ESBYTE[_line+1]==NULL) {} else {
 				canvas.DrawBar(draw_x, draw_y + list.item_h - calc(zoom*2)-1, pw, zoom, link_color_default);
-				links.add_text(draw_x, draw_y + list.y, pw, list.item_h - calc(zoom*2)-1, zoom);				
+				links.add_text(draw_x, draw_y + list.y, pw, list.item_h - calc(zoom*2)-1, zoom);
 			}
 		}
 		_SKIP_DRAW:
@@ -122,8 +122,8 @@ void TWebBrowser::NewLine()
 
 	if (draw_x==left_gap) && (draw_y==BODY_MARGIN) return;
 	if (t_html) && (!t_body) return;
-	
-	if (draw_x == style.tag_list.level * 5 * list.font_w + left_gap) { 
+
+	if (draw_x == style.tag_list.level * 5 * list.font_w + left_gap) {
 		if (!empty_line) empty_line=true; else return;
 	} else {
 		empty_line = false;
@@ -156,8 +156,8 @@ bool TWebBrowser::RenderImage(dword cur_img)
 
 	if (img_y + img_h >= canvas.bufh) canvas.IncreaseBufSize();
 
-	if (secondrun) 
-	{	
+	if (secondrun)
+	{
 		if (ESDWORD[cur_img+20] != IMAGE_BPP32) {
 			img_convert stdcall(cur_img, 0, IMAGE_BPP32, 0, 0);
 			$push eax

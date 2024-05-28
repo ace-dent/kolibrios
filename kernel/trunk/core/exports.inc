@@ -126,7 +126,7 @@ __exports:
           strrchr,               'strrchr',            \
 \
           timer_hs,              'TimerHS',            \
-          timer_hs,              'TimerHs',            \      ; shit happens
+          timer_hs,              'TimerHs',            \      ; Mistakes happen
           cancel_timer_hs,       'CancelTimerHS',      \
 \
           reg_usb_driver,        'RegUSBDriver',       \

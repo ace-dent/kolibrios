@@ -123,7 +123,7 @@ void x86_jmp( struct x86_function *p, unsigned char *label );
 void x86_call( struct x86_function *p, struct x86_reg reg);
 
 /* michal:
- * Temporary. As I need immediate operands, and dont want to mess with the codegen,
+ * Temporary. As I need immediate operands, and don't want to mess with the codegen,
  * I load the immediate into general purpose register and use it.
  */
 void x86_mov_reg_imm( struct x86_function *p, struct x86_reg dst, int imm );

@@ -1,5 +1,5 @@
 /*
- * ARM NEON optimised DSP functions for G722 coding
+ * ARM NEON optimized DSP functions for G722 coding
  * Copyright (c) 2015 Peter Meerwald <pmeerw@pmeerw.net>
  *
  * This file is part of FFmpeg.

@@ -15,7 +15,7 @@ in the background and only a small part of unzip will be duplicated in
 memory.
 
 I build unzip with the MiNT library, GNU C 2.5.8 (2.5.7 and lower have a
-rather sever problem in the optimiser that affects 68000 code only; it
+rather sever problem in the optimizer that affects 68000 code only; it
 adds 68020-only instructions to the 68000 code).  Oh, and I tested it
 extensively under MiNT's minix filesystem as well as the bogus DOS
 filesystem that "normal" Atari partitions have.

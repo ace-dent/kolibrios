@@ -66,7 +66,7 @@ fz_halftone *fz_get_default_halftone(int num_comps)
 /* Finally, code to actually perform halftoning. */
 static void make_ht_line(unsigned char *buf, fz_halftone *ht, int x, int y, int w)
 {
-	/* FIXME: There is a potential optimisation here; in the case where
+	/* FIXME: There is a potential optimization here; in the case where
 	 * the LCM of the halftone tile widths is smaller than w, we could
 	 * form just one 'LCM' run, then copy it repeatedly.
 	 */

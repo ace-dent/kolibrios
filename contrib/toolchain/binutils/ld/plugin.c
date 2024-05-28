@@ -533,7 +533,7 @@ is_visible_from_outside (struct ld_plugin_symbol *lsym,
 	 ever becomes more restrictive, not less, when symbols are merged,
 	 so this is a conservative estimate; it may give false positives,
 	 declaring something visible from outside when it in fact would
-	 not have been, but this will only lead to missed optimisation
+	 not have been, but this will only lead to missed optimization
 	 opportunities during LTRANS at worst; it will not give false
 	 negatives, which can lead to the disastrous conclusion that the
 	 related symbol is IRONLY.  (See GCC PR46319 for an example.)  */

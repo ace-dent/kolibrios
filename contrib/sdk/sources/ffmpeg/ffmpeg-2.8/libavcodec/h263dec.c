@@ -371,7 +371,7 @@ static int decode_slice(MpegEncContext *s)
         int left      = get_bits_left(&s->gb);
         int max_extra = 7;
 
-        /* no markers in M$ crap */
+        /* no markers in M$ junk */
         if (s->msmpeg4_version && s->pict_type == AV_PICTURE_TYPE_I)
             max_extra += 17;
 

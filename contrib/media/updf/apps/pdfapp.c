@@ -259,19 +259,19 @@ static void pdfapp_panview(pdfapp_t *app, int newx, int newy)
 
 	if (newx != app->panx || newy != app->pany)
 		winrepaint(app);
-		
+
 	if (newy > app->image->h) {
 
 		app->pageno++;
-		
-		
+
+
 	if (app->pageno > app->pagecount)
 		app->pageno = app->pagecount;
 
 
 			newy = 0;
 				app->pany = newy;
-			
+
 		pdfapp_showpage(app, 1, 1, 1);
 	}
 
@@ -367,7 +367,7 @@ static void pdfapp_showpage(pdfapp_t *app, int loadpage, int drawpage, int repai
 #endif
 */
 			colorspace = fz_device_bgr;
-		
+
 		app->image = fz_new_pixmap_with_rect(colorspace, bbox);
 		fz_clear_pixmap_with_color(app->image, 255);
 		idev = fz_new_draw_device(app->cache, app->image);
@@ -376,7 +376,7 @@ static void pdfapp_showpage(pdfapp_t *app, int loadpage, int drawpage, int repai
 	}
 
 	if (repaint)
-	{		
+	{
 		pdfapp_panview(app, app->panx, app->pany);
 
 		if (app->shrinkwrap)
@@ -402,7 +402,7 @@ static void pdfapp_showpage(pdfapp_t *app, int loadpage, int drawpage, int repai
 	}
 
 	fz_flush_warnings();
-	
+
 	DrawPageSides();
 }
 
@@ -766,7 +766,7 @@ void pdfapp_onkey(pdfapp_t *app, int c)
 #endif
 
 	/*
-	 * Pan view, but dont need to repaint image
+	 * Pan view, but don't need to repaint image
 	 */
 
 	case 'w':
@@ -884,7 +884,7 @@ case ']':
 		panto = PAN_TO_TOP;
 			app->pageno++;
 		break;
-		
+
 case '[':
 		panto = PAN_TO_TOP;
 			app->pageno--;

@@ -111,7 +111,7 @@
 .SET  pwm_min=                   0x08  ; Minimum PWM "duty cycle" is equal to
                                        ; pwm_min / pwm_period
 
-   
+
    ;*******************
    ;* Sample rate for throttle/ backemf/ pulses, etc
    ;*******************
@@ -131,7 +131,7 @@
 
    .SET  error_mult=             2     ; Error Multiplier.  The error between
                                        ; the throttle_set and back_emf is
-                                       ; multiplied by 2^error_mult 
+                                       ; multiplied by 2^error_mult
                                        ; limit -8 < n < 7
                                        ; 1/256 to 128
 
@@ -147,7 +147,7 @@
 
    .ifdef LOWPASS_ENABLED
 
-      .SET  emf_lowpass_gain=    2     ; tau is about 2^emf_lowpass_gain / 100 
+      .SET  emf_lowpass_gain=    2     ; tau is about 2^emf_lowpass_gain / 100
                                        ; emf_lowpass_gain 0 to 8 (7?)
    .endif   ;LOWPASS_ENABLED
 
@@ -202,26 +202,26 @@
 .endif ;SWITCH_LOWPASS_ENABLED
 
 .ifdef THROTTLE_LOWPASS_ENABLED
-   .SET  throttle_lowpass_gain=  5     ; tau is about 2^throttle_lowpass_gain / 100 
+   .SET  throttle_lowpass_gain=  5     ; tau is about 2^throttle_lowpass_gain / 100
                                        ; throttle_lowpass_gain range 0 to 8 (7?)
 .endif ;THROTTLE_LOWPASS_ENABLED
 
 .ifdef MOMENTUM_LOWPASS_ENABLED
-   .SET  momentum_lowpass_gain=  7     ; tau is about 2^momentum_lowpass_gain / 100 
+   .SET  momentum_lowpass_gain=  7     ; tau is about 2^momentum_lowpass_gain / 100
                                        ; momentum_lowpass_gain range 0 to 8 (7?)
 .endif ;MOMENTUM_LOWPASS_ENABLED
 
 .ifdef LEDS_ENABLED
 
-   .SET  accel_led_threshold=2         ; dont light led when acceleration/deceleration
+   .SET  accel_led_threshold=2         ; don't light led when acceleration/deceleration
                                        ; is closer than this to the actual speed
-   .SET  decel_led_threshold=2         ; dont light led when acceleration/deceleration
+   .SET  decel_led_threshold=2         ; don't light led when acceleration/deceleration
                                        ; is closer than this to the actual speed
 .endif;LEDS_ENABLED
 
 .ifdef LOCO_LIGHT_ENABLED
    .SET  light_pwm=             6      ; run this pwm "duty cycle when throttle is off
-.endif ;LOCO_LIGHT_ENABLED             ; to keep loco light on  
+.endif ;LOCO_LIGHT_ENABLED             ; to keep loco light on
 .endif ;TRADITIONAL_ENABLED
 
 .LIST

@@ -55,7 +55,7 @@ static __always_inline u64 hash_64(u64 val, unsigned int bits)
 #if BITS_PER_LONG == 64
 	hash = hash * GOLDEN_RATIO_64;
 #else
-	/*  Sigh, gcc can't optimise this alone like it does for 32 bits. */
+	/*  Sigh, gcc can't optimize this alone like it does for 32 bits. */
 	u64 n = hash;
 	n <<= 18;
 	hash -= n;

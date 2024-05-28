@@ -1845,7 +1845,7 @@
 	(_DEFINE_EXPR_UNARY_OPERATOR): Adjust definition.
 	(_DEFINE_EXPR_BINARY_OPERATOR): Likewise.
 	(_DEFINE_EXPR_BINARY_FUNCTION): Likewise.
-	* include/std/std_valarray.h: Dont #include <functional> anymore.
+	* include/std/std_valarray.h: Don't #include <functional> anymore.
 	(_Bitwise_or<>, _Bitwise_and<>, _Bitwise_xor<>, _Shift_left<>,
 	_Shift_right<>): Remove.
 	(_DEFINE_VALARRAY_AUGMENTED_ASSIGNMENT): Adjust instantiation.

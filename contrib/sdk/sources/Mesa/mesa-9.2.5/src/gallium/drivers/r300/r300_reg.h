@@ -541,7 +541,7 @@ USE OR OTHER DEALINGS IN THE SOFTWARE.
  * position takes place.
  *
  * Most likely this is used to ignore rest of the program in cases
- * where group of verts arent visible. For some reason this "section"
+ * where group of verts aren't visible. For some reason this "section"
  * is sometimes accepted other instruction that have no relationship with
  * position calculations.
  */
@@ -1207,7 +1207,7 @@ USE OR OTHER DEALINGS IN THE SOFTWARE.
  * My guess is that there are two bits for each zbias primitive
  * (FILL, LINE, POINT).
  *  One to enable depth test and one for depth write.
- * Yet this doesnt explain why depth writes work ...
+ * Yet this doesn't explain why depth writes work ...
  */
 #define R300_SU_POLY_OFFSET_ENABLE	       0x42B4
 #	define R300_FRONT_ENABLE	       (1 << 0)

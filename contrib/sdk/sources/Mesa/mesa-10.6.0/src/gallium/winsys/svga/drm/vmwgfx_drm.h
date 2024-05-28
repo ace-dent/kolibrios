@@ -1022,7 +1022,7 @@ union drm_vmw_gb_surface_reference_arg {
  * for read-only.
  * @drm_vmw_synccpu_write: Sync for write. Block all command submissions
  * referencing this buffer.
- * @drm_vmw_synccpu_dontblock: Dont wait for GPU idle, but rather return
+ * @drm_vmw_synccpu_dontblock: Don't wait for GPU idle, but rather return
  * -EBUSY should the buffer be busy.
  * @drm_vmw_synccpu_allow_cs: Allow command submission that touches the buffer
  * while the buffer is synced for CPU. This is similar to the GEM bo idle

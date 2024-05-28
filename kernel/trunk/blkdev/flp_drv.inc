@@ -142,7 +142,7 @@ FDCDataOutput:
 
 ;******************************************
 ;*   READ BYTE FROM FDC DATA PORT         *
-;* Procedure doesnt have input params.    *
+;* Procedure doesn't have input params.   *
 ;* Output :                               *
 ;* AL - byte read.                        *
 ;******************************************

@@ -675,7 +675,7 @@ st_framebuffer_reuse_or_create(struct gl_framebuffer *fb,
 {
    struct st_framebuffer *cur = st_ws_framebuffer(fb), *stfb = NULL;
 
-   /* dummy framebuffers cant be used as st_framebuffer */
+   /* dummy framebuffers can't be used as st_framebuffer */
    if (cur && &cur->Base != _mesa_get_incomplete_framebuffer() &&
        cur->iface == stfbi) {
       /* reuse the current stfb */

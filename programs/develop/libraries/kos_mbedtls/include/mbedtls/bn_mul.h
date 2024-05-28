@@ -60,7 +60,7 @@
 
 /*
  * Disable use of the i386 assembly code below if option -O0, to disable all
- * compiler optimisations, is passed, detected with __OPTIMIZE__
+ * compiler optimizations, is passed, detected with __OPTIMIZE__
  * This is done as the number of registers used in the assembly code doesn't
  * work with the -O0 option.
  */

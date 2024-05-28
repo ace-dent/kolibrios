@@ -2,15 +2,15 @@
 ; note: by stdcall convention callee is responsible for cleaning up the stack,
 ; arguments are pushed onto the stack in right-to-left order
 align 4
-proc _memset stdcall, dest:dword, val:byte, cnt:dword ; doesnt clobber any registers
+proc _memset stdcall, dest:dword, val:byte, cnt:dword ; doesn't clobber any registers
         ;DEBUGF  DBG_INFO, "memset(%x, %u, %u)\n", [dest], [val], [cnt]
         push    eax ecx edi
         mov     edi, dword [dest]
         mov     al,  byte [val]
         mov     ecx, dword [cnt]
-        rep     stosb   
+        rep     stosb
         pop     edi ecx eax
-        ret 
+        ret
 endp
 
 align 4
@@ -60,7 +60,7 @@ proc mod_div stdcall, num: dword, num_mod: dword, num_div:dword ; TODO check
         mov     eax, dword [num]
         mov     ecx, dword [num_mod]
         div     ecx
-        
+
         mov     eax, edx
         xor     edx, edx
         mov     ecx, dword [num_div]
@@ -93,7 +93,7 @@ proc keyboard_update stdcall, _code: dword
         jae     .ret
         DEBUGF  DBG_INFO, "keynum %x\n", ebx
         mov     byte [key + ebx], 1
-        
+
 .ret:
         pop     edx ecx ebx eax
         ret

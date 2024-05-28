@@ -26,7 +26,7 @@
  *
  * Original version by Sam Lantinga
  *
- * Mattias Engdegård (Yorick): Rewrite. New encoding format, encoder and
+ * Mattias Engdegï¿½rd (Yorick): Rewrite. New encoding format, encoder and
  * decoder. Added per-surface alpha blitter. Added per-pixel alpha
  * format, encoder and blitter.
  *
@@ -72,7 +72,7 @@
  *   For 32-bit targets, each pixel has the target RGB format but with
  *   the alpha value occupying the highest 8 bits. The <skip> and <run>
  *   counts are 16 bit.
- * 
+ *
  *   For 16-bit targets, each pixel has the target RGB format, but with
  *   the middle component (usually green) shifted 16 steps to the left,
  *   and the hole filled with the 5 most significant bits of the alpha value.
@@ -885,7 +885,7 @@ int SDL_RLEAlphaBlit(SDL_Surface *src, SDL_Rect *srcrect,
  * The decoding functions copy to 32bpp rgb + a, and
  * return the number of bytes copied from the source.
  * These are only used in the encoder and un-RLE code and are therefore not
- * highly optimised.
+ * highly optimized.
  */
 
 /* encode 32bpp rgb + a into 16bpp rgb, losing alpha */
@@ -1496,7 +1496,7 @@ static void UnRLEAlpha(SDL_Surface *surface)
 	/* skip padding if needed */
 	if(bpp == 2)
 	    srcbuf += (unsigned long)srcbuf & 2;
-	
+
 	/* copy translucent pixels */
 	ofs = 0;
 	do {

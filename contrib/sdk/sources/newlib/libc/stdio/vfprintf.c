@@ -868,7 +868,7 @@ _DEFUN(_VFPRINTF_R, (data, fp, fmt0, ap),
 	}
 
 #ifdef _UNBUF_STREAM_OPT
-	/* optimise fprintf(stderr) (and other unbuffered Unix files) */
+	/* optimize fprintf(stderr) (and other unbuffered Unix files) */
 	if ((fp->_flags & (__SNBF|__SWR|__SRW)) == (__SNBF|__SWR) &&
 	    fp->_file >= 0) {
 		_newlib_flockfile_exit (fp);

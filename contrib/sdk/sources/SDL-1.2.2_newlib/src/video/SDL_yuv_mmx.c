@@ -34,15 +34,15 @@
 
 #define static
 static unsigned int  ASM_VAR(MMX_0080w)[]    = {0x00800080, 0x00800080};
-static unsigned int  ASM_VAR(MMX_00FFw)[]    = {0x00ff00ff, 0x00ff00ff}; 
-static unsigned int  ASM_VAR(MMX_FF00w)[]    = {0xff00ff00, 0xff00ff00}; 
+static unsigned int  ASM_VAR(MMX_00FFw)[]    = {0x00ff00ff, 0x00ff00ff};
+static unsigned int  ASM_VAR(MMX_FF00w)[]    = {0xff00ff00, 0xff00ff00};
 
-static unsigned short ASM_VAR(MMX_Ycoeff)[]  = {0x004a, 0x004a, 0x004a, 0x004a}; 
+static unsigned short ASM_VAR(MMX_Ycoeff)[]  = {0x004a, 0x004a, 0x004a, 0x004a};
 
-static unsigned short ASM_VAR(MMX_UbluRGB)[] = {0x0072, 0x0072, 0x0072, 0x0072};    
-static unsigned short ASM_VAR(MMX_VredRGB)[] = {0x0059, 0x0059, 0x0059, 0x0059};  
-static unsigned short ASM_VAR(MMX_UgrnRGB)[] = {0xffea, 0xffea, 0xffea, 0xffea}; 
-static unsigned short ASM_VAR(MMX_VgrnRGB)[] = {0xffd2, 0xffd2, 0xffd2, 0xffd2};  
+static unsigned short ASM_VAR(MMX_UbluRGB)[] = {0x0072, 0x0072, 0x0072, 0x0072};
+static unsigned short ASM_VAR(MMX_VredRGB)[] = {0x0059, 0x0059, 0x0059, 0x0059};
+static unsigned short ASM_VAR(MMX_UgrnRGB)[] = {0xffea, 0xffea, 0xffea, 0xffea};
+static unsigned short ASM_VAR(MMX_VgrnRGB)[] = {0xffd2, 0xffd2, 0xffd2, 0xffd2};
 
 static unsigned short ASM_VAR(MMX_Ublu5x5)[] = {0x0081, 0x0081, 0x0081, 0x0081};
 static unsigned short ASM_VAR(MMX_Vred5x5)[] = {0x0066, 0x0066, 0x0066, 0x0066};
@@ -73,16 +73,16 @@ static unsigned short ASM_VAR(MMX_blu5x5)[]  = {0x001f, 0x001f, 0x001f, 0x001f};
    The MMX routine calculates 256bit=8RGB values in each cycle
    (4 for row1 & 4 for row2)
 
-   The red/green/blue.. coefficents are taken from the mpeg_play 
-   player. They look nice, but I dont know if you can have
+   The red/green/blue.. coefficents are taken from the mpeg_play
+   player. They look nice, but I don't know if you can have
    better values, to avoid integer rounding errors.
-   
+
 
    IMPORTANT:
    ==========
 
    It is a requirement that the cr/cb/lum are 8 byte aligned and
-   the out are 16byte aligned or you will/may get segfaults
+   the out are 16byte aligned to avoid segfaults.
 
 */
 
@@ -97,7 +97,7 @@ void ColorRGBDitherYV12MMX1X( int *colortab, Uint32 *rgb_2_pix,
     unsigned char* y = lum +cols*rows;    // Pointer to the end
     int x=0;
     row1 = (Uint32 *)out;                 // 32 bit target
-    row2 = (Uint32 *)out+cols+mod;        // start of second row 
+    row2 = (Uint32 *)out+cols+mod;        // start of second row
     mod = (mod+cols+mod)*4;               // increment for row1 in byte
 
     __asm__ __volatile__ (
@@ -110,14 +110,14 @@ void ColorRGBDitherYV12MMX1X( int *colortab, Uint32 *rgb_2_pix,
 
 	         ".align 8\n"
 		 "1:\n"
-		
+
 		 // create Cr (result in mm1)
 		 "movd (%%ebx), %%mm1\n"   //         0  0  0  0  v3 v2 v1 v0
 		 "pxor %%mm7,%%mm7\n"      //         00 00 00 00 00 00 00 00
 		 "movd (%2), %%mm2\n"           //    0  0  0  0 l3 l2 l1 l0
 		 "punpcklbw %%mm7,%%mm1\n" //         0  v3 0  v2 00 v1 00 v0
 		 "punpckldq %%mm1,%%mm1\n" //         00 v1 00 v0 00 v1 00 v0
-		 "psubw _MMX_0080w,%%mm1\n"  // mm1-128:r1 r1 r0 r0 r1 r1 r0 r0 
+		 "psubw _MMX_0080w,%%mm1\n"  // mm1-128:r1 r1 r0 r0 r1 r1 r0 r0
 
 		 // create Cr_g (result in mm0)
 		 "movq %%mm1,%%mm0\n"           // r1 r1 r0 r0 r1 r1 r0 r0
@@ -125,7 +125,7 @@ void ColorRGBDitherYV12MMX1X( int *colortab, Uint32 *rgb_2_pix,
 		 "pmullw _MMX_VredRGB,%%mm1\n"// red*89dec=1.4013*64
 		 "psraw  $6, %%mm0\n"           // red=red/64
 		 "psraw  $6, %%mm1\n"           // red=red/64
-		 
+
 		 // create L1 L2 (result in mm2,mm4)
 		 // L2=lum+cols
 		 "movq (%2,%4),%%mm3\n"         //    0  0  0  0 L3 L2 L1 L0
@@ -149,7 +149,7 @@ void ColorRGBDitherYV12MMX1X( int *colortab, Uint32 *rgb_2_pix,
 		 "movd (%1), %%mm1\n"      //         0  0  0  0  u3 u2 u1 u0
 		 "punpcklbw %%mm7,%%mm1\n" //         0  u3 0  u2 00 u1 00 u0
 		 "punpckldq %%mm1,%%mm1\n" //         00 u1 00 u0 00 u1 00 u0
-		 "psubw _MMX_0080w,%%mm1\n"  // mm1-128:u1 u1 u0 u0 u1 u1 u0 u0 
+		 "psubw _MMX_0080w,%%mm1\n"  // mm1-128:u1 u1 u0 u0 u1 u1 u0 u0
 		 // create Cb_g (result in mm5)
 		 "movq %%mm1,%%mm5\n"            // u1 u1 u0 u0 u1 u1 u0 u0
 		 "pmullw _MMX_UgrnRGB,%%mm5\n"    // blue*-109dec=1.7129*64
@@ -167,7 +167,7 @@ void ColorRGBDitherYV12MMX1X( int *colortab, Uint32 *rgb_2_pix,
 		 "packuswb %%mm3,%%mm3\n"  // G3 G1 g3 g1 G3 G1 g3 g1
 		 "packuswb %%mm7,%%mm7\n"  // G2 G0 g2 g0 G2 G0 g2 g0
 		 "punpcklbw %%mm3,%%mm7\n" // G3 G2 G1 G0 g3 g2 g1 g0
-		 
+
 		 // create B (result in mm5)
 		 "movq %%mm2,%%mm3\n"         //   0  L3  0 L1  0 l3  0 l1
 		 "movq %%mm4,%%mm5\n"         //   0  L2  0 L0  0 l2  0 l1
@@ -194,16 +194,16 @@ void ColorRGBDitherYV12MMX1X( int *colortab, Uint32 *rgb_2_pix,
 		 "pxor %%mm2,%%mm2\n"           //  0  0  0  0  0  0  0  0
 		 "movq %%mm7,%%mm1\n"           // G3 G2 G1 G0 g3 g2 g1 g0
 		 "punpcklbw %%mm1,%%mm2\n"      // g3  0 g2  0 g1  0 g0  0
-		 "punpcklwd %%mm4,%%mm2\n"      //  0  0 g1  0  0  0 g0  0 
+		 "punpcklwd %%mm4,%%mm2\n"      //  0  0 g1  0  0  0 g0  0
 		 "por  %%mm3, %%mm2\n"          //  0 r1 g1 b1  0 r0 g0 b0
 		 "movq   %%mm2,(%3)\n"          // wrote out ! row1
 
 		 "pxor %%mm2,%%mm2\n"           //  0  0  0  0  0  0  0  0
 		 "punpcklbw %%mm1,%%mm4\n"      // g3  0 g2  0 g1  0 g0  0
-		 "punpckhwd %%mm2,%%mm4\n"      //  0  0 g3  0  0  0 g2  0 
+		 "punpckhwd %%mm2,%%mm4\n"      //  0  0 g3  0  0  0 g2  0
 		 "por  %%mm0, %%mm4\n"          //  0 r3 g3 b3  0 r2 g2 b2
 		 "movq   %%mm4,8(%3)\n"         // wrote out ! row1
-		 
+
 		 // fill destination row2 (needed are mm6=Rr,mm7=Gg,mm5=Bb)
 		 // this can be done "destructive"
 		 "pxor %%mm2,%%mm2\n"           //  0  0  0  0  0  0  0  0
@@ -214,7 +214,7 @@ void ColorRGBDitherYV12MMX1X( int *colortab, Uint32 *rgb_2_pix,
 		 "movq   %%mm1,(%5)\n"          // wrote out ! row2
 		 "punpckhwd %%mm6,%%mm5\n"      //  0 R3 G3 B3  0 R2 G2 B2
 		 "movq   %%mm5,8(%5)\n"         // wrote out ! row2
-		 
+
 		 "addl  $4,%2\n"            // lum+4
 		 "leal  16(%3),%3\n"        // row1+16
 		 "leal  16(%5),%5\n"        // row2+16
@@ -225,7 +225,7 @@ void ColorRGBDitherYV12MMX1X( int *colortab, Uint32 *rgb_2_pix,
 		 "cmpl  %4,%6\n"
 
 		 "jl    1b\n"
-		 "addl           %4,     %2\n" // lum += cols 
+		 "addl           %4,     %2\n" // lum += cols
 		 "addl           %8,     %3\n" // row1+= mod
 		 "addl           %8,     %5\n" // row2+= mod
 		 "movl           $0,     %6\n" // x=0
@@ -400,7 +400,7 @@ void Color565DitherYV12MMX1X( int *colortab, Uint32 *rgb_2_pix,
 
 
          "jl             1b\n"
-	 "addl           %4,     %2\n" // lum += cols 
+	 "addl           %4,     %2\n" // lum += cols
 	 "addl           %8,     %3\n" // row1+= mod
 	 "addl           %8,     %5\n" // row2+= mod
 	 "movl           $0,     %6\n" // x=0

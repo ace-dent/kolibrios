@@ -25,14 +25,14 @@ extern dword progressbar_progress;
 
 extern dword frame_draw;
 
-/* 
+/*
     Legacy support
     For new programs need to use edit_box_key_safe (or edit_box_key_c
-    with a define below)   
+    with a define below)
     TODO: change in all cmm programs edit_box_key to edit_box_key_safe (edit_box_key_c)
           See examples in eolite and imgedit
-          
-    This define changed all edit_box_key_c to edit_box_key_safe identifier's              
+
+    This define changed all edit_box_key_c to edit_box_key_safe identifier's
 */
 #define edit_box_key_c  edit_box_key_safe
 
@@ -198,7 +198,7 @@ struct progress_bar
 struct frame
 {
 	dword type;
-	word size_x; //start_x, size_x => Mario, WTF? Is this so complex to use x/y/w/h ?
+	word size_x; //start_x, size_x => Mario. Why is this so complex to use x/y/w/h ?
 	word start_x;
 	word size_y;
 	word start_y;

@@ -657,7 +657,7 @@ checkbuttons:
    popa
    mov	 [BTN_COUNT],byte 1 ; no of buttons in buffer
    pop	 ebx
-   mov	 [BTN_BUFF],ebx   ; lets put the button id in buffer
+   mov	 [BTN_BUFF],ebx   ; let's put the button id in buffer
    push  ebx
    pusha
    jmp yes_on_button

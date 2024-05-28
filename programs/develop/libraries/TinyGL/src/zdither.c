@@ -1,5 +1,5 @@
-/* 
- * Highly optimised dithering 16 bits -> 8 bits. 
+/*
+ * Highly optimized dithering 16 bits -> 8 bits.
  * The formulas were taken in Mesa (Bob Mercier mercier@hollywood.cinenet.net).
  */
 
@@ -127,7 +127,7 @@ void ZB_ditherFrameBuffer(ZBuffer *zb,unsigned char *buf,
       r_d=((c1 << 2) & 0xF800) >> 2;
       g_d=(c1 >> 4) & 0x07C0;
       b_d=(c1 >> 9) & 0x001F;
-      
+
       r_d|=(((c2 << 2) & 0xF800) >> 2) << 16;
       g_d|=((c2 >> 4) & 0x07C0) << 16;
       b_d|=((c2 >> 9) & 0x001F) << 16;
@@ -135,7 +135,7 @@ void ZB_ditherFrameBuffer(ZBuffer *zb,unsigned char *buf,
 
       dest1=buf + (yk * linesize) + xk;
       pp1=zb->pbuf + (yk * zb->xsize) + xk;
-      
+
       for(y=yk;y<zb->ysize;y+=4) {
 	dest=dest1;
 	pp=pp1;

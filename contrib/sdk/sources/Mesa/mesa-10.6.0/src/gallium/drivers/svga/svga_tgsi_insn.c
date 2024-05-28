@@ -413,7 +413,7 @@ emit_op4(struct svga_shader_emitter *emit,
  * Apply the absolute value modifier to the given src_register, returning
  * a new src_register.
  */
-static struct src_register 
+static struct src_register
 absolute(struct src_register src)
 {
    src.base.srcMod = SVGA3DSRCMOD_ABS;
@@ -425,7 +425,7 @@ absolute(struct src_register src)
  * Apply the negation modifier to the given src_register, returning
  * a new src_register.
  */
-static struct src_register 
+static struct src_register
 negate(struct src_register src)
 {
    switch (src.base.srcMod) {
@@ -1479,7 +1479,7 @@ emit_kill(struct svga_shader_emitter *emit,
    struct src_register one = get_one_immediate(emit);
    SVGA3dShaderInstToken inst = inst_token( SVGA3DOP_TEXKILL );
 
-   /* texkill doesn't allow negation on the operand so lets move
+   /* texkill doesn't allow negation on the operand so let's move
     * negation of {1} to a temp register */
    temp = get_temp( emit );
    if (!submit_op1( emit, inst_token( SVGA3DOP_MOV ), temp,
@@ -3496,7 +3496,7 @@ emit_adjusted_vertex_attribs(struct svga_shader_emitter *emit)
 {
    unsigned adjust_mask = (emit->key.vkey.adjust_attrib_range |
                            emit->key.vkey.adjust_attrib_w_1);
- 
+
    while (adjust_mask) {
       /* Adjust vertex attrib range and/or set W component = 1 */
       const unsigned index = u_bit_scan(&adjust_mask);

@@ -606,8 +606,8 @@ static int vmw_fb_set_par(struct fb_info *info)
 	vmw_fb_dirty_mark(par, par->fb_x, par->fb_y,
 			  par->set_fb->width, par->set_fb->height);
 
-	/* If there already was stuff dirty we wont
-	 * schedule a new work, so lets do it now */
+	/* If there already was stuff dirty we won't
+	 * schedule a new work, so let's do it now */
 
 //	schedule_delayed_work(&par->local_work, 0);
 
@@ -822,7 +822,7 @@ int vmw_fb_on(struct vmw_private *vmw_priv)
 	spin_lock_irqsave(&par->dirty.lock, flags);
 	par->dirty.active = true;
 	spin_unlock_irqrestore(&par->dirty.lock, flags);
- 
+
 	return 0;
 }
 

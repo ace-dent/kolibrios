@@ -185,7 +185,7 @@ text:
     db '                                        '
     db '   OPEN CHOOSE BOX                      '
 
-    db 'x <- END MARKER, DONT DELETE            '
+    db 'x <- END MARKER, DON'T DELETE            '
 
 labelt:
      db   'EXAMPLE APPLICATION'

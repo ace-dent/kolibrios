@@ -1,5 +1,5 @@
 /*
- * VC1 NEON optimisations
+ * VC1 NEON optimizations
  *
  * Copyright (c) 2010 Rob Clark <rob@ti.com>
  * Copyright (c) 2011 Mans Rullgard <mans@mansr.com>

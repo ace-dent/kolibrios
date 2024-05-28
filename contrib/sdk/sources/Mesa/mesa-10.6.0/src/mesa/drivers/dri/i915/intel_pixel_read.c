@@ -176,7 +176,7 @@ intelReadPixels(struct gl_context * ctx,
       perf_debug("%s: fallback to CPU mapping in PBO case\n", __func__);
    }
 
-   /* glReadPixels() wont dirty the front buffer, so reset the dirty
+   /* glReadPixels() won't dirty the front buffer, so reset the dirty
     * flag after calling intel_prepare_render(). */
    dirty = intel->front_buffer_dirty;
    intel_prepare_render(intel);

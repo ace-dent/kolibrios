@@ -1175,7 +1175,7 @@ _DEFUN(__SVFWSCANF_R, (rptr, fp, fmt0, ap),
 #ifdef hardway
 	  if (width == 0 || width > sizeof (buf) - 1)
 #else
-	  /* size_t is unsigned, hence this optimisation */
+	  /* size_t is unsigned, hence this optimization */
 	  if (width - 1 > sizeof (buf) - 2)
 #endif
 	    {

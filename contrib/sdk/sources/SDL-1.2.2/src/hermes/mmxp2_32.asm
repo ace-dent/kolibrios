@@ -1,26 +1,26 @@
 ;
-; pII-optimised MMX format converters for HERMES
+; pII-optimized MMX format converters for HERMES
 ; Copyright (c) 1998 Christian Nentwich (c.nentwich@cs.ucl.ac.uk)
 ;   and (c) 1999 Jonathan Matthew (jmatthew@uq.net.au)
 ; This source code is licensed under the GNU LGPL
-; 
+;
 ; Please refer to the file COPYING.LIB contained in the distribution for
-; licensing conditions		
+; licensing conditions
 ;
 ; COPYRIGHT NOTICE
-; 
+;
 ; This file partly contains code that is (c) Intel Corporation, specifically
 ; the mode detection routine, and the converter to 15 bit (8 pixel
 ; conversion routine from the mmx programming tutorial pages).
 ;
 ;
-; These routines aren't exactly pII optimised - it's just that as they
+; These routines aren't exactly pII optimized - it's just that as they
 ; are, they're terrible on p5 MMXs, but less so on pIIs.  Someone needs to
-; optimise them for p5 MMXs..
+; optimize them for p5 MMXs..
 
 BITS 32
 
-	
+
 GLOBAL _ConvertMMXpII32_24RGB888
 GLOBAL _ConvertMMXpII32_16RGB565
 GLOBAL _ConvertMMXpII32_16BGR565
@@ -28,9 +28,9 @@ GLOBAL _ConvertMMXpII32_16RGB555
 GLOBAL _ConvertMMXpII32_16BGR555
 
 EXTERN _mmxreturn
- 
+
 SECTION .data
-	
+
 ALIGN 8
 
 ;; Constants for conversion routines
@@ -47,7 +47,7 @@ mmx32_rgb555_mul dd 20000008h,20000008h
 mmx32_bgr555_mul dd 00082000h,00082000h
 
 
-			
+
 SECTION .text
 
 _ConvertMMXpII32_24RGB888:
@@ -178,7 +178,7 @@ _ConvertMMXpII32_16RGB565:
 .L4:
 	jmp _mmxreturn
 
-	
+
 _ConvertMMXpII32_16BGR565:
 
         movq mm5, [mmx32_rgb565_r]
@@ -266,15 +266,15 @@ _ConvertMMXpII32_16RGB555:
         movq mm7,qword [mmx32_rgb555_mul]
 _convert_bgr555_cheat:
         movq mm6,qword [mmx32_rgb555_g]
-        
-	mov edx,ecx		           ; Save ecx 
+
+	mov edx,ecx		           ; Save ecx
 
         and ecx,BYTE 0fffffff8h            ; clear lower three bits
 	jnz .L_OK
-        jmp .L2 
+        jmp .L2
 
 .L_OK:
-	
+
 	movq mm2,[esi+8]
 
 	movq mm0,[esi]
@@ -311,7 +311,7 @@ _convert_bgr555_cheat:
 	pand mm3,qword [mmx32_rgb555_rb]
 	pand mm4,mm6
 
-	movq [edi],mm1			
+	movq [edi],mm1
 	pmaddwd mm3,mm7
 
         add esi,BYTE 32
@@ -340,22 +340,22 @@ _convert_bgr555_cheat:
 
 	pmaddwd mm1,mm7
         add edi,BYTE 16
-	
+
         sub ecx,BYTE 8
 	jz .L2
         jmp .L1
 
 
-.L2:	
+.L2:
 	mov ecx,edx
-	
+
         and ecx,BYTE 7
 	jz .L4
-	
-.L3:	
+
+.L3:
 	mov ebx,[esi]
         add esi,BYTE 4
-	
+
         mov eax,ebx
         mov edx,ebx
 
@@ -377,9 +377,9 @@ _convert_bgr555_cheat:
         add edi,BYTE 2
 
 	dec ecx
-	jnz .L3	
+	jnz .L3
 
-.L4:		
+.L4:
 	jmp _mmxreturn
 
 

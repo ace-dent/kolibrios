@@ -65,7 +65,7 @@ int main(){
      header is 44 bytes) and assume that the data is 44.1khz, stereo, 16 bit
      little endian pcm samples. This is just an example, after all. */
 
-#ifdef _WIN32 /* We need to set stdin/stdout to binary mode. Damn windows. */
+#ifdef _WIN32 /* We need to set stdin/stdout to binary mode. Darn windows. */
   /* if we were reading/writing a file, it would also need to in
      binary mode, eg, fopen("file.wav","wb"); */
   /* Beware the evil ifdef. We avoid these where we can, but this one we

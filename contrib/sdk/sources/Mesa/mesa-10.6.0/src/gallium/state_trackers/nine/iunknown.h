@@ -58,7 +58,7 @@ NineUnknown( void *data )
     return (struct NineUnknown *)data;
 }
 
-/* Use this instead of a shitload of arguments: */
+/* Use this instead of many arguments: */
 struct NineUnknownParams
 {
     void *vtable;

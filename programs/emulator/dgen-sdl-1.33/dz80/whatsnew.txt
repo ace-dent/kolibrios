@@ -31,7 +31,7 @@ Additions and Changes to all versions
 
         See Section 3.0 in the supplied dz80.txt file for the details on this
         powerful new feature.
-	
+
         Added configuration file support (again, courtesy of Lua!). When dZ80
         runs, it attempts to load and execute a dz80.ini file. The Windows GUI
         version of dZ80 continues to use the Windows registry to load and save
@@ -50,7 +50,7 @@ Additions and Changes to all versions
 
 	Single instruction disassemblies (DISFLAG_SINGLE) are now much faster.
 
-        Numerous code clean-ups and minor optimisations.
+        Numerous code clean-ups and minor optimizations.
 
         Added Raffaele Sena's skip.c to the source code download. Skip is
         now documented in dZ80.txt.
@@ -104,7 +104,7 @@ Additions and Changes to all versions
 	You can override dZ80's default number format prefix and suffixes.
 	E.g. you could change dz80's default hex format from "$1234" to
         "1234h", "0x1234", etc.
-	
+
 	The directive for define byte can be changed - default is "db"
 
 	The character to mark the start of a comment can be changed - default is a semicolon.
@@ -133,9 +133,9 @@ Additions and Changes to all versions
         (http://www.inkland.org/dz80)
 
 	Source code change: dZ80_Disassemble() is now thread-safe.
-	
+
 Additions and Changes to the command line versions
-	
+
         dZ80.exe is now a 32-bit DOS executable (no more dz80-32.exe)
 
         No more 16-bit DOS version of dZ80 - it's gone on a permanent
@@ -146,21 +146,21 @@ Additions and Changes to the command line versions
         octal by using the C style prefixes. E.g. dz80 /s=0x8000
 
 	New command line switches:
-	 
+
                 -d allows you to override dZ80's default of "db" to represent
                 define-byte. e.g. -d="defb"
-        
+
                 -f allows you to override dZ80's default comment marker ("; ")
                 e.g. -f="# "
-        
+
                 -i allows you to select the radix for dZ80's output.
                         -i=16 = select hexadecimal (default)
                         -i=10 = select decimal
                         -i=8  = select octal
-        
-                -p and -y allow you to specify a prefix and suffix for all 
+
+                -p and -y allow you to specify a prefix and suffix for all
                 numbers displayed by dZ80. e.g. -p="0x" -y="" or -p="" -y="h"
-        
+
                 -z selects the cpu type.
                         -z=Z80 selects Z80 (default)
                         -z=Z180 selects the Z180
@@ -170,7 +170,7 @@ Additions and Changes to the Windows version
 
 	The last file disassembled is automatically remembered and selected
         in new sessions.
-	
+
 	The details of the last disassembly (for the current session) are
         shown.
 
@@ -178,7 +178,7 @@ Additions and Changes to the Windows version
 	if you're working on the same source file!)
 
 	You can enter C style hex and octal numbers in the options screen.
-	
+
 Bug Fixes (all versions)
 
 	Disassembly comments are no longer affected by the upper or lowercase
@@ -189,7 +189,7 @@ Bug Fixes (all versions)
 
 	Fixed the 65,535 byte limit of the "skip file" bytes option, so you
         can finally disassemble files > 64K!
-	
+
 
 v1.31 - 28th February, 1998. The Raffaele Sena Release ;-)
 ----------------------------------------------------------
@@ -201,7 +201,7 @@ Additions and Changes to all versions:
 
         Removed references to the two non-ANSI functions "strlwr" and "strupr"
         from the source code.
-        
+
 Bug Fixes:
 
         "add ix,ix" (or "iy") was being disassembled as "add ix,hl"
@@ -328,7 +328,7 @@ Additions and Changes:
         dZ80 now comes supplied with a sample Sinclair Spectrum snapshot and
         opcode map file.
 
-        Made some minor optimisations.
+        Made some minor optimizations.
 
         All warnings and errors are now displayed via "stderr" which means
         that they will be visible, even if dZ80's output is redirected.

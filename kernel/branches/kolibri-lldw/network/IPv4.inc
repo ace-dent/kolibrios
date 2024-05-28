@@ -394,7 +394,7 @@ ipv4_input:
         or      edi, -1
   .find_last_entry:                                             ; The following routine will try to find the last entry
         cmp     edi, [esi + IPv4_FRAGMENT_entry.PrevPtr]
-        jne     .destroy_slot                                   ; Damn, something screwed up, remove the whole slot (and free buffers too if possible!)
+        jne     .destroy_slot                                   ; Oh, something screwed up, remove the whole slot (and free buffers too if possible!)
         mov     edi, esi
         mov     esi, [esi + IPv4_FRAGMENT_entry.NextPtr]
         cmp     esi, -1
@@ -461,7 +461,7 @@ ipv4_input:
 
   .count_bytes:
         cmp     [esi + IPv4_FRAGMENT_entry.PrevPtr], edi
-        jne     .destroy_slot_pop                                                       ; Damn, something screwed up, remove the whole slot (and free buffers too if possible!)
+        jne     .destroy_slot_pop                                                       ; Oh, something screwed up, remove the whole slot (and free buffers too if possible!)
         mov     cx, [esi + sizeof.IPv4_FRAGMENT_entry + IPv4_header.TotalLength]        ; Add total length
         xchg    cl, ch
         DEBUGF  DEBUG_NETWORK_VERBOSE, "IPv4_input: Packet size=%u\n", cx
